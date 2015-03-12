@@ -20,7 +20,7 @@ namespace Grading
 
         private MySqlCommandBuilder sqlCommandBuilder = null;
 
-        private bool insertMeStyle(string STYLEID,string BUYERID, string MEID)
+        private bool insertMeStyle(string STYLEID,string BUYERID, string MEID,int? CEK)
         {
             bool stat = false;
             try
@@ -37,11 +37,12 @@ namespace Grading
                 Command.Connection = Connection;
                 Command.CommandType = CommandType.Text;
                 // Command.CommandText = "Select * from Orders ";
-                Command.CommandText = "INSERT INTO measurementstyle(STYLEID,BUYERID,MEID) VALUES(@STYLEID,@BUYERID,@MEID)";
+                Command.CommandText = "INSERT INTO measurementstyle(STYLEID,BUYERID,MEID,CEK) VALUES(@STYLEID,@BUYERID,@MEID,@CEK)";
                 //item insert
                 Command.Parameters.AddWithValue("@STYLEID", STYLEID);
                 Command.Parameters.AddWithValue("@MEID", MEID);
                 Command.Parameters.AddWithValue("@BUYERID", BUYERID);
+                Command.Parameters.AddWithValue("@CEK", CEK);
                 Command.ExecuteNonQuery();
                 // MySqlDataAdapter DataAdapter = new MySqlDataAdapter(Command);
                 // DataAdapter.Fill(ds, "Orders");
@@ -119,11 +120,24 @@ namespace Grading
                 BindingSource bindingSourceBuyer = new BindingSource();
                 bindingSourceBuyer.DataSource = dataTableBuyer;
 
+                //dataTableBuyer.Rows.Add(new object() {"0", ""});
+
+                DataRow newCustomersRow = dataTableBuyer.NewRow();
+
+                newCustomersRow["BUYERID"] = "";
+                newCustomersRow["BUYERNAME"] = "";
+
+                dataTableBuyer.Rows.Add(newCustomersRow);
+
                 //combo binding
 
                 cbBuyer.DataSource = bindingSourceBuyer;
                 cbBuyer.ValueMember = "BUYERID";
                 cbBuyer.DisplayMember = "BUYERNAME";
+                cbBuyer.Text = "";
+               // cbBuyer.SelectedIndex=-1;
+                //masterDataGridView.Rows.Clear();
+                //cbBuyer.Items.Insert(0, new ListItem("Select", string.Empty));
                 connection.Close();
 
             }
@@ -157,7 +171,7 @@ namespace Grading
                 MySqlConnection connection = new MySqlConnection(Global.strCon);
                 //list combo
                 string selectQueryStringBuyer = "SELECT * FROM "+
-                    "(SELECT * FROM measurementstyle WHERE styleid='"+style+"')DATA "+
+                    "(SELECT * FROM measurementstyle WHERE styleid='" + style + "' ORDER BY CEK)DATA " +
                     " RIGHT JOIN measurement on measurement.MEID = DATA.MEID "+
                     " WHERE measurement.BUYERID='"+buyer+"'";
 
@@ -174,8 +188,9 @@ namespace Grading
 
                 masterDataGridView.Columns.Clear();
 
-                DataGridViewCheckBoxColumn ColumnmCEK = new DataGridViewCheckBoxColumn();
-                ColumnmCEK.HeaderText = "CEK";
+                //DataGridViewCheckBoxColumn ColumnmCEK = new DataGridViewCheckBoxColumn();
+                DataGridViewTextBoxColumn ColumnmCEK = new DataGridViewTextBoxColumn();
+                ColumnmCEK.HeaderText = "NO";
                 ColumnmCEK.Width = 80;
                 ColumnmCEK.DataPropertyName = "CEK";
                 ColumnmCEK.Name = "CEK";
@@ -204,7 +219,7 @@ namespace Grading
 
 
                 DataGridViewTextBoxColumn ColumnmMEID = new DataGridViewTextBoxColumn();
-                ColumnmMEID.HeaderText = "MEID";
+                ColumnmMEID.HeaderText = "CODE";
                 ColumnmMEID.Width = 80;
                 ColumnmMEID.DataPropertyName = "MEID";
                 ColumnmMEID.Name = "MEID";
@@ -311,7 +326,7 @@ namespace Grading
         }
         private void cbBuyer_SelectedIndexChanged(object sender, EventArgs e)
         {
-           string buyer = cbBuyer.SelectedValue.ToString();
+            string buyer = cbBuyer.SelectedValue.ToString();
             getMeasurementBuyer(buyer, txtStyleID.Text);
 
         }
@@ -321,6 +336,7 @@ namespace Grading
             string STYLEID;
             string MEID;
             string BUYERID;
+            int? CEK;
 
             //delet dulu semua by style
             BUYERID = cbBuyer.SelectedValue.ToString();
@@ -331,18 +347,27 @@ namespace Grading
             {
             
 
-                if (row.Cells["CEK"].Value != DBNull.Value )
+                //if (row.Cells["CEK"].Value != DBNull.Value )
+                if (row.Cells["CEK"].Value != null)
                 {
-                    if (Convert.ToBoolean(row.Cells["CEK"].Value) == true)
+                    //if (Convert.ToBoolean(row.Cells["CEK"].Value) == true)
+                    //if (Convert.ToBoolean(row.Cells["CEK"].Value) == true)
+                    //{
+                    try
                     {
+                        CEK = Convert.ToInt16(row.Cells["CEK"].Value);
                         STYLEID = txtStyleID.Text;
                         BUYERID = Convert.ToString(masterDataGridView.Rows[row.Index].Cells["BUYERID1"].Value);
                         MEID = Convert.ToString(masterDataGridView.Rows[row.Index].Cells["MEID1"].Value);
                         //delete
                         //MessageBox.Show("insert");
-                        insertMeStyle(STYLEID, BUYERID, MEID);
+                        insertMeStyle(STYLEID, BUYERID, MEID, CEK);
                     }
-                }
+                    catch
+                    {
+                    }
+                    //}
+               }
             }
             MessageBox.Show("the data has been saved");
         }
@@ -355,6 +380,11 @@ namespace Grading
         private void cmdClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmMeasurementStyle_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

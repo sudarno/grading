@@ -148,7 +148,7 @@ namespace Grading
 
                 
                 DataGridViewTextBoxColumn ColumnmMEID = new DataGridViewTextBoxColumn();
-                ColumnmMEID.HeaderText = "MEID";
+                ColumnmMEID.HeaderText = "CODE";
                 ColumnmMEID.Width = 80;
                 ColumnmMEID.DataPropertyName = "MEID";
                 ColumnmMEID.Name = "MEID";

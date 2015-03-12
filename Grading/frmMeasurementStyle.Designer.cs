@@ -152,6 +152,7 @@
             this.Controls.Add(this.masterDataGridView);
             this.Name = "frmMeasurementStyle";
             this.Text = "frmMeasurementStyle";
+            this.Load += new System.EventHandler(this.frmMeasurementStyle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.masterDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

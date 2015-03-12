@@ -284,7 +284,7 @@ namespace Grading
                 bindingSourceSIZEID.DataSource = dataTableSIZEID;
 
                 //list MEID
-                string selectQueryStringMEID = "SELECT * FROM measurementstyle WHERE STYLEID='" + style + "'";
+                string selectQueryStringMEID = "SELECT * FROM measurementstyle WHERE STYLEID='" + style + "' ORDER BY CEK";
 
                 MySqlDataAdapter sqlDataAdapterMEID = new MySqlDataAdapter(selectQueryStringMEID, connection);
                 MySqlCommandBuilder sqlCommandBuilderMEID = new MySqlCommandBuilder(sqlDataAdapterMEID);
@@ -391,10 +391,11 @@ namespace Grading
                   " inner join buyer on buyer.BUYERID =grading.BUYERID" +
                   " inner join direction on direction.STYLEID=gradingdetail.STYLEID AND direction.LW=gradingdetail.DIRECTION" +
                   " inner join sizeorder on sizeorder.SIZEID=gradingdetail.SIZEID AND sizeorder.STYLEID=gradingdetail.STYLEID" +
+                  " inner join measurementstyle on measurementstyle.STYLEID=style.STYLEID and measurementstyle.MEID=measurement.MEID "+
                     //" where grading.STYLEID='" + txtStyleID.Text + "'" +
                   " where grading.STYLEID='"+style+"'" +
                   " GROUP BY buyer.BUYERNAME,style.STYLEID,style.STYLENAME,grading.COLOR,grading.DATE,direction.LW,measurement.MEID,measurement.MEASUREMENT " +
-                  " ORDER BY sizeorder.ORDERNO,measurement.MEID";
+                  " ORDER BY sizeorder.ORDERNO,measurementstyle.CEK";
                 MySqlDataAdapter ItemDataAdapter = new MySqlDataAdapter(strQuery, connection);
                 ItemDataAdapter.Fill(data1, "gradingPrint");
 
@@ -922,11 +923,12 @@ namespace Grading
                         " inner join size on size.SIZEID=gradingdetail.SIZEID" +
                         " inner join style on style.STYLEID=grading.STYLEID" +
                         " inner join buyer on buyer.BUYERID =grading.BUYERID" +
+                        " inner join measurementstyle on measurementstyle.STYLEID=style.STYLEID and measurementstyle.MEID=measurement.MEID " +
                         " inner join direction on direction.STYLEID=gradingdetail.STYLEID AND direction.LW=gradingdetail.DIRECTION" +
                         " inner join sizeorder on sizeorder.SIZEID=gradingdetail.SIZEID AND sizeorder.STYLEID=gradingdetail.STYLEID" +
                         " where grading.STYLEID='" + txtStyleID.Text + "'" +
                         " GROUP BY buyer.BUYERNAME,style.STYLENAME,grading.COLOR,grading.DATE,direction.LW,measurement.MEID,measurement.MEASUREMENT " +
-                        " ORDER BY sizeorder.ORDERNO,measurement.MEID";
+                        " ORDER BY sizeorder.ORDERNO,measurementstyle.CEK";
                 MySqlDataAdapter printDataAdapter = new MySqlDataAdapter(strQuery, connection);
                 printDataAdapter.Fill(dataPrint, "gradingPrint");
 
@@ -1020,11 +1022,12 @@ namespace Grading
                       " inner join size on size.SIZEID=gradingdetail.SIZEID" +
                       " inner join style on style.STYLEID=grading.STYLEID" +
                       " inner join buyer on buyer.BUYERID =grading.BUYERID" +
+                      " inner join measurementstyle on measurementstyle.STYLEID=style.STYLEID and measurementstyle.MEID=measurement.MEID " +
                       " inner join direction on direction.STYLEID=gradingdetail.STYLEID AND direction.LW=gradingdetail.DIRECTION" +
                       " inner join sizeorder on sizeorder.SIZEID=gradingdetail.SIZEID AND sizeorder.STYLEID=gradingdetail.STYLEID" +
                       " where grading.STYLEID='" + txtStyleID.Text + "'" +
                       " GROUP BY buyer.BUYERNAME,style.STYLENAME,grading.COLOR,grading.DATE,direction.LW,measurement.MEID,measurement.MEASUREMENT " +
-                      " ORDER BY sizeorder.ORDERNO,measurement.MEID";
+                      " ORDER BY sizeorder.ORDERNO,measurementstyle.CEK";
                 MySqlDataAdapter printDataAdapter = new MySqlDataAdapter(strQuery, connection);
                 printDataAdapter.Fill(dataPrint, "gradingPrint");
                 Application.DoEvents();
