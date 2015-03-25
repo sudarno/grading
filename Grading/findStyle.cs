@@ -44,14 +44,14 @@ namespace Grading
 
                 DataGridViewTextBoxColumn ColumnstyleID = new DataGridViewTextBoxColumn();
                 ColumnstyleID.HeaderText = "styleID";
-                ColumnstyleID.Width = 80;
+                ColumnstyleID.Width = 180;
                 ColumnstyleID.DataPropertyName = "styleID";
                 ColumnstyleID.Name = "styleID";
                 masterDataGridView.Columns.Add(ColumnstyleID);
 
 
                 DataGridViewTextBoxColumn ColumnstyleName = new DataGridViewTextBoxColumn();
-                ColumnstyleName.HeaderText = "styleNAME";
+                ColumnstyleName.HeaderText = "Description";
                 ColumnstyleName.Width = 180;
                 ColumnstyleName.DataPropertyName = "styleNAME";
                 ColumnstyleName.Name = "styleNAME";
@@ -92,7 +92,7 @@ namespace Grading
 
 
                 DataGridViewTextBoxColumn ColumnstyleName = new DataGridViewTextBoxColumn();
-                ColumnstyleName.HeaderText = "STYLE NAME";
+                ColumnstyleName.HeaderText = "Description";
                 ColumnstyleName.Width = 180;
                 ColumnstyleName.DataPropertyName = "styleNAME";
                 ColumnstyleName.Name = "styleNAME";

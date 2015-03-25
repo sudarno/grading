@@ -43,8 +43,8 @@
             this.measurementStyleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.measurementChartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.measurementGradingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.test1 = new Grading.test();
             this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.test1 = new Grading.test();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 

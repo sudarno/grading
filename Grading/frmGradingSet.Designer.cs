@@ -58,7 +58,7 @@
             // 
             // cmdPrintSpec
             // 
-            this.cmdPrintSpec.Location = new System.Drawing.Point(259, 416);
+            this.cmdPrintSpec.Location = new System.Drawing.Point(256, 577);
             this.cmdPrintSpec.Name = "cmdPrintSpec";
             this.cmdPrintSpec.Size = new System.Drawing.Size(75, 23);
             this.cmdPrintSpec.TabIndex = 154;
@@ -68,7 +68,7 @@
             // 
             // cmdPrintGrading
             // 
-            this.cmdPrintGrading.Location = new System.Drawing.Point(178, 416);
+            this.cmdPrintGrading.Location = new System.Drawing.Point(175, 577);
             this.cmdPrintGrading.Name = "cmdPrintGrading";
             this.cmdPrintGrading.Size = new System.Drawing.Size(75, 23);
             this.cmdPrintGrading.TabIndex = 153;
@@ -78,7 +78,7 @@
             // 
             // cmdClose
             // 
-            this.cmdClose.Location = new System.Drawing.Point(521, 414);
+            this.cmdClose.Location = new System.Drawing.Point(518, 575);
             this.cmdClose.Name = "cmdClose";
             this.cmdClose.Size = new System.Drawing.Size(75, 23);
             this.cmdClose.TabIndex = 152;
@@ -88,7 +88,7 @@
             // 
             // cmdDelete
             // 
-            this.cmdDelete.Location = new System.Drawing.Point(97, 416);
+            this.cmdDelete.Location = new System.Drawing.Point(94, 577);
             this.cmdDelete.Name = "cmdDelete";
             this.cmdDelete.Size = new System.Drawing.Size(75, 23);
             this.cmdDelete.TabIndex = 151;
@@ -98,7 +98,7 @@
             // 
             // cmdSave
             // 
-            this.cmdSave.Location = new System.Drawing.Point(16, 416);
+            this.cmdSave.Location = new System.Drawing.Point(13, 577);
             this.cmdSave.Name = "cmdSave";
             this.cmdSave.Size = new System.Drawing.Size(75, 23);
             this.cmdSave.TabIndex = 150;
@@ -109,15 +109,15 @@
             // detailsDataGridView
             // 
             this.detailsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.detailsDataGridView.Location = new System.Drawing.Point(13, 143);
+            this.detailsDataGridView.Location = new System.Drawing.Point(13, 65);
             this.detailsDataGridView.Name = "detailsDataGridView";
-            this.detailsDataGridView.Size = new System.Drawing.Size(1139, 251);
+            this.detailsDataGridView.Size = new System.Drawing.Size(975, 506);
             this.detailsDataGridView.TabIndex = 146;
             this.detailsDataGridView.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.detailsDataGridView_EditingControlShowing);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(374, 96);
+            this.button1.Location = new System.Drawing.Point(751, 34);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 158;
@@ -128,7 +128,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(455, 96);
+            this.button2.Location = new System.Drawing.Point(832, 34);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 159;
@@ -179,7 +179,7 @@
             // 
             // dateGrading
             // 
-            this.dateGrading.Location = new System.Drawing.Point(63, 90);
+            this.dateGrading.Location = new System.Drawing.Point(516, 38);
             this.dateGrading.Name = "dateGrading";
             this.dateGrading.Size = new System.Drawing.Size(200, 20);
             this.dateGrading.TabIndex = 147;
@@ -196,7 +196,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 96);
+            this.label2.Location = new System.Drawing.Point(466, 44);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(30, 13);
             this.label2.TabIndex = 149;
@@ -204,15 +204,15 @@
             // 
             // txtColorID
             // 
-            this.txtColorID.Location = new System.Drawing.Point(63, 64);
+            this.txtColorID.Location = new System.Drawing.Point(516, 9);
             this.txtColorID.Name = "txtColorID";
-            this.txtColorID.Size = new System.Drawing.Size(207, 20);
+            this.txtColorID.Size = new System.Drawing.Size(200, 20);
             this.txtColorID.TabIndex = 155;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 67);
+            this.label3.Location = new System.Drawing.Point(466, 12);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 13);
             this.label3.TabIndex = 156;
@@ -229,7 +229,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(536, 96);
+            this.button3.Location = new System.Drawing.Point(913, 34);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 160;
@@ -240,7 +240,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(617, 96);
+            this.button4.Location = new System.Drawing.Point(832, 9);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 161;
@@ -251,7 +251,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(698, 96);
+            this.button5.Location = new System.Drawing.Point(751, 5);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 162;
@@ -280,14 +280,14 @@
             "NORMAL",
             "BW",
             "BW & AW"});
-            this.cbPrint.Location = new System.Drawing.Point(340, 416);
+            this.cbPrint.Location = new System.Drawing.Point(337, 577);
             this.cbPrint.Name = "cbPrint";
             this.cbPrint.Size = new System.Drawing.Size(160, 21);
             this.cbPrint.TabIndex = 164;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(617, 414);
+            this.button6.Location = new System.Drawing.Point(614, 575);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 165;
@@ -300,7 +300,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1164, 460);
+            this.ClientSize = new System.Drawing.Size(1006, 605);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.cbPrint);
             this.Controls.Add(this.txtBuyer);

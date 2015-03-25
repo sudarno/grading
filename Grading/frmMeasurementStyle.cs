@@ -172,7 +172,7 @@ namespace Grading
                 //list combo
                 string selectQueryStringBuyer = "SELECT * FROM "+
                     "(SELECT * FROM measurementstyle WHERE styleid='" + style + "' ORDER BY CEK)DATA " +
-                    " RIGHT JOIN measurement on measurement.MEID = DATA.MEID "+
+                    " RIGHT JOIN measurement on measurement.MEID = DATA.MEID AND measurement.BUYERID=DATA.buyerid " +
                     " WHERE measurement.BUYERID='"+buyer+"'";
 
                 MySqlDataAdapter sqlDataAdapterBuyer = new MySqlDataAdapter(selectQueryStringBuyer, connection);

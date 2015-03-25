@@ -94,7 +94,13 @@ namespace Grading
         }
         private void Menu_Load(object sender, EventArgs e)
         {
+            string pathString = @"C:\MyGarmentReport";
             crystal();
+            // cek folder
+            if (!System.IO.File.Exists(pathString))
+            {
+                System.IO.Directory.CreateDirectory(pathString);
+            }
         }
 
         private void sizeOrderToolStripMenuItem_Click(object sender, EventArgs e)

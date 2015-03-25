@@ -150,6 +150,7 @@ namespace Grading
                 {
                     masterBindingSource.AddNew(); //inisial untuk insert new
                     txtStyleID.Text = Style;
+                    dateGrading.Value = DateTime.Now;
                 }
 
                 //grid detail
@@ -176,6 +177,7 @@ namespace Grading
         private void frmGradingSet_Load(object sender, EventArgs e)
         {
             cbPrint.Text = "NORMAL";
+            dateGrading.Value = DateTime.Now;
         }
 
         private void cmdStyleID_Click(object sender, EventArgs e)
@@ -391,7 +393,7 @@ namespace Grading
                   " inner join buyer on buyer.BUYERID =grading.BUYERID" +
                   " inner join direction on direction.STYLEID=gradingdetail.STYLEID AND direction.LW=gradingdetail.DIRECTION" +
                   " inner join sizeorder on sizeorder.SIZEID=gradingdetail.SIZEID AND sizeorder.STYLEID=gradingdetail.STYLEID" +
-                  " inner join measurementstyle on measurementstyle.STYLEID=style.STYLEID and measurementstyle.MEID=measurement.MEID "+
+                  " inner join measurementstyle on measurementstyle.STYLEID=style.STYLEID and measurementstyle.MEID=measurement.MEID  AND measurement.BUYERID=measurementstyle.buyerid " +
                     //" where grading.STYLEID='" + txtStyleID.Text + "'" +
                   " where grading.STYLEID='"+style+"'" +
                   " GROUP BY buyer.BUYERNAME,style.STYLEID,style.STYLENAME,grading.COLOR,grading.DATE,direction.LW,measurement.MEID,measurement.MEASUREMENT " +
@@ -887,6 +889,9 @@ namespace Grading
                        ",MAX(case when sizeorder.ORDERNO=8 then sizeorder.ORDERNO end ) ORDERNO8" +
                        ",MAX(case when sizeorder.ORDERNO=9 then sizeorder.ORDERNO end ) ORDERNO9" +
                        ",MAX(case when sizeorder.ORDERNO=10 then sizeorder.ORDERNO end ) ORDERNO10" +
+                       ",MAX(case when sizeorder.ORDERNO=11 then sizeorder.ORDERNO end ) ORDERNO11" +
+                       ",MAX(case when sizeorder.ORDERNO=12 then sizeorder.ORDERNO end ) ORDERNO12" +
+
                        " ,MAX(case when sizeorder.ORDERNO=1 then sizeorder.SIZEID end ) SIZE1 " +
                        " ,MAX(case when sizeorder.ORDERNO=2 then sizeorder.SizeID end ) SIZE2 " +
                        " ,MAX(case when sizeorder.ORDERNO=3 then sizeorder.SizeID end ) SIZE3" +
@@ -897,6 +902,9 @@ namespace Grading
                        " ,MAX(case when sizeorder.ORDERNO=8 then sizeorder.SizeID end ) SIZE8" +
                        " ,MAX(case when sizeorder.ORDERNO=9 then sizeorder.SizeID end ) SIZE9" +
                        " ,MAX(case when sizeorder.ORDERNO=10 then sizeorder.SizeID end ) SIZE10" +
+                       " ,MAX(case when sizeorder.ORDERNO=11 then sizeorder.SizeID end ) SIZE11" +
+                       " ,MAX(case when sizeorder.ORDERNO=12 then sizeorder.SizeID end ) SIZE12" +
+
                        " ,MAX(case when sizeorder.ORDERNO=1 then gradingdetail.BASIC end ) BASIC1" +
                        " ,MAX(case when sizeorder.ORDERNO=2 then gradingdetail.BASIC end ) BASIC2" +
                        " ,MAX(case when sizeorder.ORDERNO=3 then gradingdetail.BASIC end ) BASIC3" +
@@ -907,6 +915,9 @@ namespace Grading
                        " ,MAX(case when sizeorder.ORDERNO=8 then gradingdetail.BASIC end ) BASIC8" +
                        " ,MAX(case when sizeorder.ORDERNO=9 then gradingdetail.BASIC end ) BASIC9" +
                        " ,MAX(case when sizeorder.ORDERNO=10 then gradingdetail.BASIC end ) BASIC10" +
+                       " ,MAX(case when sizeorder.ORDERNO=11 then gradingdetail.BASIC end ) BASIC11" +
+                       " ,MAX(case when sizeorder.ORDERNO=12 then gradingdetail.BASIC end ) BASIC12" +
+
                        " ,MAX(case when sizeorder.ORDERNO=1 then gradingdetail.BASIC*(1-(direction.LWVALUE/100)) end ) PATTERN1" +
                        " ,MAX(case when sizeorder.ORDERNO=2 then gradingdetail.BASIC*(1-(direction.LWVALUE/100)) end ) PATTERN2" +
                        " ,MAX(case when sizeorder.ORDERNO=3 then gradingdetail.BASIC*(1-(direction.LWVALUE/100)) end ) PATTERN3" +
@@ -917,13 +928,16 @@ namespace Grading
                         " ,MAX(case when sizeorder.ORDERNO=8 then gradingdetail.BASIC*(1-(direction.LWVALUE/100)) end ) PATTERN8" +
                         " ,MAX(case when sizeorder.ORDERNO=9 then gradingdetail.BASIC*(1-(direction.LWVALUE/100)) end ) PATTERN9" +
                         " ,MAX(case when sizeorder.ORDERNO=10 then gradingdetail.BASIC*(1-(direction.LWVALUE/100)) end ) PATTERN10" +
+                        " ,MAX(case when sizeorder.ORDERNO=11 then gradingdetail.BASIC*(1-(direction.LWVALUE/100)) end ) PATTERN11" +
+                        " ,MAX(case when sizeorder.ORDERNO=12 then gradingdetail.BASIC*(1-(direction.LWVALUE/100)) end ) PATTERN12" +
+
                         " from grading " +
                         " inner join gradingdetail on grading.STYLEID=gradingdetail.STYLEID" +
                         " inner join measurement on measurement.MEID=gradingdetail.MEID" +
                         " inner join size on size.SIZEID=gradingdetail.SIZEID" +
                         " inner join style on style.STYLEID=grading.STYLEID" +
                         " inner join buyer on buyer.BUYERID =grading.BUYERID" +
-                        " inner join measurementstyle on measurementstyle.STYLEID=style.STYLEID and measurementstyle.MEID=measurement.MEID " +
+                        " inner join measurementstyle on measurementstyle.STYLEID=style.STYLEID and measurementstyle.MEID=measurement.MEID AND measurement.BUYERID=measurementstyle.BUYERID " +
                         " inner join direction on direction.STYLEID=gradingdetail.STYLEID AND direction.LW=gradingdetail.DIRECTION" +
                         " inner join sizeorder on sizeorder.SIZEID=gradingdetail.SIZEID AND sizeorder.STYLEID=gradingdetail.STYLEID" +
                         " where grading.STYLEID='" + txtStyleID.Text + "'" +
@@ -986,6 +1000,9 @@ namespace Grading
                      ",MAX(case when sizeorder.ORDERNO=8 then sizeorder.ORDERNO end ) ORDERNO8" +
                      ",MAX(case when sizeorder.ORDERNO=9 then sizeorder.ORDERNO end ) ORDERNO9" +
                      ",MAX(case when sizeorder.ORDERNO=10 then sizeorder.ORDERNO end ) ORDERNO10" +
+                     ",MAX(case when sizeorder.ORDERNO=10 then sizeorder.ORDERNO end ) ORDERNO11" +
+                     ",MAX(case when sizeorder.ORDERNO=10 then sizeorder.ORDERNO end ) ORDERNO12" +
+
                      " ,MAX(case when sizeorder.ORDERNO=1 then sizeorder.SIZEID end ) SIZE1 " +
                      " ,MAX(case when sizeorder.ORDERNO=2 then sizeorder.SizeID end ) SIZE2 " +
                      " ,MAX(case when sizeorder.ORDERNO=3 then sizeorder.SizeID end ) SIZE3" +
@@ -996,6 +1013,9 @@ namespace Grading
                      " ,MAX(case when sizeorder.ORDERNO=8 then sizeorder.SizeID end ) SIZE8" +
                      " ,MAX(case when sizeorder.ORDERNO=9 then sizeorder.SizeID end ) SIZE9" +
                      " ,MAX(case when sizeorder.ORDERNO=10 then sizeorder.SizeID end ) SIZE10" +
+                     " ,MAX(case when sizeorder.ORDERNO=11 then sizeorder.SizeID end ) SIZE11" +
+                     " ,MAX(case when sizeorder.ORDERNO=12 then sizeorder.SizeID end ) SIZE12" +
+
                      " ,MAX(case when sizeorder.ORDERNO=1 then gradingdetail.BASIC end ) BASIC1" +
                      " ,MAX(case when sizeorder.ORDERNO=2 then gradingdetail.BASIC end ) BASIC2" +
                      " ,MAX(case when sizeorder.ORDERNO=3 then gradingdetail.BASIC end ) BASIC3" +
@@ -1006,6 +1026,9 @@ namespace Grading
                      " ,MAX(case when sizeorder.ORDERNO=8 then gradingdetail.BASIC end ) BASIC8" +
                      " ,MAX(case when sizeorder.ORDERNO=9 then gradingdetail.BASIC end ) BASIC9" +
                      " ,MAX(case when sizeorder.ORDERNO=10 then gradingdetail.BASIC end ) BASIC10" +
+                     " ,MAX(case when sizeorder.ORDERNO=11 then gradingdetail.BASIC end ) BASIC11" +
+                     " ,MAX(case when sizeorder.ORDERNO=12 then gradingdetail.BASIC end ) BASIC12" +
+
                      " ,MAX(case when sizeorder.ORDERNO=1 then gradingdetail.BASIC*(1-(direction.LWVALUE/100)) end ) PATTERN1" +
                      " ,MAX(case when sizeorder.ORDERNO=2 then gradingdetail.BASIC*(1-(direction.LWVALUE/100)) end ) PATTERN2" +
                      " ,MAX(case when sizeorder.ORDERNO=3 then gradingdetail.BASIC*(1-(direction.LWVALUE/100)) end ) PATTERN3" +
@@ -1016,13 +1039,16 @@ namespace Grading
                       " ,MAX(case when sizeorder.ORDERNO=8 then gradingdetail.BASIC*(1-(direction.LWVALUE/100)) end ) PATTERN8" +
                       " ,MAX(case when sizeorder.ORDERNO=9 then gradingdetail.BASIC*(1-(direction.LWVALUE/100)) end ) PATTERN9" +
                       " ,MAX(case when sizeorder.ORDERNO=10 then gradingdetail.BASIC*(1-(direction.LWVALUE/100)) end ) PATTERN10" +
+                      " ,MAX(case when sizeorder.ORDERNO=11 then gradingdetail.BASIC*(1-(direction.LWVALUE/100)) end ) PATTERN11" +
+                      " ,MAX(case when sizeorder.ORDERNO=12 then gradingdetail.BASIC*(1-(direction.LWVALUE/100)) end ) PATTERN12" +
+
                       " from grading " +
                       " inner join gradingdetail on grading.STYLEID=gradingdetail.STYLEID" +
                       " inner join measurement on measurement.MEID=gradingdetail.MEID" +
                       " inner join size on size.SIZEID=gradingdetail.SIZEID" +
                       " inner join style on style.STYLEID=grading.STYLEID" +
                       " inner join buyer on buyer.BUYERID =grading.BUYERID" +
-                      " inner join measurementstyle on measurementstyle.STYLEID=style.STYLEID and measurementstyle.MEID=measurement.MEID " +
+                      " inner join measurementstyle on measurementstyle.STYLEID=style.STYLEID and measurementstyle.MEID=measurement.MEID AND measurement.BUYERID=measurementstyle.BUYERID  " +
                       " inner join direction on direction.STYLEID=gradingdetail.STYLEID AND direction.LW=gradingdetail.DIRECTION" +
                       " inner join sizeorder on sizeorder.SIZEID=gradingdetail.SIZEID AND sizeorder.STYLEID=gradingdetail.STYLEID" +
                       " where grading.STYLEID='" + txtStyleID.Text + "'" +
@@ -1072,33 +1098,35 @@ namespace Grading
         }
         private void LastColumnComboSelectionChanged(object sender, EventArgs e)
         {
-            var currentcell = detailsDataGridView.CurrentCellAddress;
-            var sendingCB = sender as DataGridViewComboBoxEditingControl;
-            string MEID;
-            DataGridViewTextBoxCell cel = (DataGridViewTextBoxCell)detailsDataGridView.Rows[currentcell.Y].Cells["MEASUREMENT"];
-            MEID = sendingCB.EditingControlFormattedValue.ToString();
-            //cel.Value = sendingCB.EditingControlFormattedValue.ToString();
-
-            //cari di database
-            DataSet ds = new DataSet();
-            //MySqlConnection connection = new MySqlConnection(Global.strCon);
-            string str = "select * from measurement where MEID='"+MEID+"'";//" + detailsDataGridView.Rows[detailsDataGridView.CurrentRow.Index].Cells["MEID"].Value + "'";
-            MySqlConnection con = new MySqlConnection(Global.strCon);
-            con.Open();
-            MySqlCommand cmd = new MySqlCommand(str, con);
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            da.Fill(ds, "measurement");
-            if (ds.Tables["measurement"].Rows.Count > 0)
+            if (detailsDataGridView.CurrentCell.ColumnIndex == 3 )
             {
-                cel.Value = ds.Tables["measurement"].Rows[0]["MEASUREMENT"].ToString();
-                //detailsDataGridView.Rows[detailsDataGridView.CurrentRow.Index].Cells["MEASUREMENT"].Value = ds.Tables["measurement"].Rows[0]["MEASUREMENT"].ToString();
-                //detailsDataGridView.Rows[intRownum].Cells[4].Value = ds.Tables["Product_Details"].Rows[intRownum][1].ToString();
-                detailsDataGridView.Update();
+                var currentcell = detailsDataGridView.CurrentCellAddress;
+                var sendingCB = sender as DataGridViewComboBoxEditingControl;
+                string MEID;
+                DataGridViewTextBoxCell cel = (DataGridViewTextBoxCell)detailsDataGridView.Rows[currentcell.Y].Cells["MEASUREMENT"];
+                MEID = sendingCB.EditingControlFormattedValue.ToString();
+                //cel.Value = sendingCB.EditingControlFormattedValue.ToString();
+
+                //cari di database
+                DataSet ds = new DataSet();
+                //MySqlConnection connection = new MySqlConnection(Global.strCon);
+                string str = "select * from measurement where MEID='" + MEID + "'";//" + detailsDataGridView.Rows[detailsDataGridView.CurrentRow.Index].Cells["MEID"].Value + "'";
+                MySqlConnection con = new MySqlConnection(Global.strCon);
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand(str, con);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(ds, "measurement");
+                if (ds.Tables["measurement"].Rows.Count > 0)
+                {
+                    cel.Value = ds.Tables["measurement"].Rows[0]["MEASUREMENT"].ToString();
+                    //detailsDataGridView.Rows[detailsDataGridView.CurrentRow.Index].Cells["MEASUREMENT"].Value = ds.Tables["measurement"].Rows[0]["MEASUREMENT"].ToString();
+                    //detailsDataGridView.Rows[intRownum].Cells[4].Value = ds.Tables["Product_Details"].Rows[intRownum][1].ToString();
+                    detailsDataGridView.Update();
+                }
+                con.Close();
+
+
             }
-            con.Close();
-
-
-
 
         }
         private void comboBox_SelecteIndexChanged(object sender, EventArgs e)
