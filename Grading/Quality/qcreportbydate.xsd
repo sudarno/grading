@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="NewDataSet" msprop:Generator_UserDSName="NewDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="qcreportbydate" msprop:Generator_TableClassName="qcreportbydateDataTable" msprop:Generator_TableVarName="tableqcreportbydate" msprop:Generator_RowChangedName="qcreportbydateRowChanged" msprop:Generator_TablePropName="qcreportbydate" msprop:Generator_RowDeletingName="qcreportbydateRowDeleting" msprop:Generator_RowChangingName="qcreportbydateRowChanging" msprop:Generator_RowEvHandlerName="qcreportbydateRowChangeEventHandler" msprop:Generator_RowDeletedName="qcreportbydateRowDeleted" msprop:Generator_RowClassName="qcreportbydateRow" msprop:Generator_UserTableName="qcreportbydate" msprop:Generator_RowEvArgName="qcreportbydateRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="date1" msprop:Generator_ColumnVarNameInTable="columndate1" msprop:Generator_ColumnPropNameInRow="date1" msprop:Generator_ColumnPropNameInTable="date1Column" msprop:Generator_UserColumnName="date1" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="date2" msprop:Generator_ColumnVarNameInTable="columndate2" msprop:Generator_ColumnPropNameInRow="date2" msprop:Generator_ColumnPropNameInTable="date2Column" msprop:Generator_UserColumnName="date2" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NAME" msprop:Generator_ColumnVarNameInTable="columnNAME" msprop:Generator_ColumnPropNameInRow="NAME" msprop:Generator_ColumnPropNameInTable="NAMEColumn" msprop:Generator_UserColumnName="NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="BUYERNAME" msprop:Generator_ColumnVarNameInTable="columnBUYERNAME" msprop:Generator_ColumnPropNameInRow="BUYERNAME" msprop:Generator_ColumnPropNameInTable="BUYERNAMEColumn" msprop:Generator_UserColumnName="BUYERNAME" type="xs:string" minOccurs="0" />
+              <xs:element name="STYLEID" msprop:Generator_ColumnVarNameInTable="columnSTYLEID" msprop:Generator_ColumnPropNameInRow="STYLEID" msprop:Generator_ColumnPropNameInTable="STYLEIDColumn" msprop:Generator_UserColumnName="STYLEID" type="xs:string" minOccurs="0" />
+              <xs:element name="QTYORDER" msprop:Generator_ColumnVarNameInTable="columnQTYORDER" msprop:Generator_ColumnPropNameInRow="QTYORDER" msprop:Generator_ColumnPropNameInTable="QTYORDERColumn" msprop:Generator_UserColumnName="QTYORDER" type="xs:int" minOccurs="0" />
+              <xs:element name="QTYCUTT" msprop:Generator_ColumnVarNameInTable="columnQTYCUTT" msprop:Generator_ColumnPropNameInRow="QTYCUTT" msprop:Generator_ColumnPropNameInTable="QTYCUTTColumn" msprop:Generator_UserColumnName="QTYCUTT" type="xs:int" minOccurs="0" />
+              <xs:element name="QTYCHECK" msprop:Generator_ColumnVarNameInTable="columnQTYCHECK" msprop:Generator_ColumnPropNameInRow="QTYCHECK" msprop:Generator_ColumnPropNameInTable="QTYCHECKColumn" msprop:Generator_UserColumnName="QTYCHECK" type="xs:int" minOccurs="0" />
+              <xs:element name="QTYPASS" msprop:Generator_ColumnVarNameInTable="columnQTYPASS" msprop:Generator_ColumnPropNameInRow="QTYPASS" msprop:Generator_ColumnPropNameInTable="QTYPASSColumn" msprop:Generator_UserColumnName="QTYPASS" type="xs:int" minOccurs="0" />
+              <xs:element name="QTYREPAIR" msprop:Generator_ColumnVarNameInTable="columnQTYREPAIR" msprop:Generator_ColumnPropNameInRow="QTYREPAIR" msprop:Generator_ColumnPropNameInTable="QTYREPAIRColumn" msprop:Generator_UserColumnName="QTYREPAIR" type="xs:long" minOccurs="0" />
+              <xs:element name="DATE" msprop:Generator_ColumnVarNameInTable="columnDATE" msprop:Generator_ColumnPropNameInRow="DATE" msprop:Generator_ColumnPropNameInTable="DATEColumn" msprop:Generator_UserColumnName="DATE" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

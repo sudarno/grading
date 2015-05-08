@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grading", "Grading\Grading.csproj", "{F3938C1B-88D3-4FD3-BD88-6679DC9885D0}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{6931BEAE-A7A6-46F4-94F3-3D606B30BCFF}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -15,8 +13,6 @@ Global
 		{F3938C1B-88D3-4FD3-BD88-6679DC9885D0}.Debug|x86.Build.0 = Debug|x86
 		{F3938C1B-88D3-4FD3-BD88-6679DC9885D0}.Release|x86.ActiveCfg = Release|x86
 		{F3938C1B-88D3-4FD3-BD88-6679DC9885D0}.Release|x86.Build.0 = Release|x86
-		{6931BEAE-A7A6-46F4-94F3-3D606B30BCFF}.Debug|x86.ActiveCfg = Debug
-		{6931BEAE-A7A6-46F4-94F3-3D606B30BCFF}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

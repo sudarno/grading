@@ -64,6 +64,12 @@
   <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -72,7 +78,10 @@
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.7.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\MySQL\MySQL Connector Net 6.8.5\Assemblies\v4.0\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
@@ -87,16 +96,229 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="printSpecBW.cs">
+    <Compile Include="Master\frmCategory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="printSpecBW.Designer.cs">
+    <Compile Include="Master\frmCategory.Designer.cs">
+      <DependentUpon>frmCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\frmColor.Designer.cs">
+      <DependentUpon>frmColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\frmLine.Designer.cs">
+      <DependentUpon>frmLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Measurement\frmInch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Measurement\frmInch.Designer.cs">
+      <DependentUpon>frmInch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\findStyleColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\findStyleColor.Designer.cs">
+      <DependentUpon>findStyleColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\InspectionCr.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InspectionCr.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Quality\InspectionRpt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\InspectionRpt.Designer.cs">
+      <DependentUpon>InspectionRpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\qcreportinspection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\qcreportinspection.Designer.cs">
+      <DependentUpon>qcreportinspection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\qcreportinspection1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>qcreportinspection.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\qcreportinspectionCR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>qcreportinspectionCR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Quality\qcreportinspectiondetail.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>qcreportinspectiondetail.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\qcreportperstylesum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\qcreportperstylesum.Designer.cs">
+      <DependentUpon>qcreportperstylesum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\qcreportperstylesumCR.cs">
+      <DependentUpon>qcreportperstylesumCR.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Quality\qcreportperstyleCR.cs">
+      <DependentUpon>qcreportperstyleCR.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Quality\frmPermak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\frmPermak.Designer.cs">
+      <DependentUpon>frmPermak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\qcreportperlineCR.cs">
+      <DependentUpon>qcreportperlineCR.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Quality\frmInspection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\frmInspection.Designer.cs">
+      <DependentUpon>frmInspection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\frmInspectionRpt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\frmInspectionRpt.Designer.cs">
+      <DependentUpon>frmInspectionRpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\qcreportbysumFRM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\qcreportbysumFRM.Designer.cs">
+      <DependentUpon>qcreportbysumFRM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\qcreportbysumCR.cs">
+      <DependentUpon>qcreportbysumCR.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Quality\findStyleSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\findStyleSetting.Designer.cs">
+      <DependentUpon>findStyleSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\frmInputQC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\frmInputQC.Designer.cs">
+      <DependentUpon>frmInputQC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\frmReportbyDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\frmReportbyDate.Designer.cs">
+      <DependentUpon>frmReportbyDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\frmSettingStyleQC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\frmSettingStyleQC.Designer.cs">
+      <DependentUpon>frmSettingStyleQC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\qcreportbydate.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>qcreportbydate.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\qcreportbydateCR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>qcreportbydateCR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Quality\qcreportbydateFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\qcreportbydateFrm.Designer.cs">
+      <DependentUpon>qcreportbydateFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\frmQCCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\frmQCCheck.Designer.cs">
+      <DependentUpon>frmQCCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Measurement\printGrading1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Measurement\printGrading1.Designer.cs">
+      <DependentUpon>printGrading1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Measurement\printGradingCR1.cs">
+      <DependentUpon>printGradingCR1.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Measurement\printSpec1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Measurement\printSpec1.Designer.cs">
+      <DependentUpon>printSpec1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Measurement\printSpecBW1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Measurement\printSpecBW1.Designer.cs">
+      <DependentUpon>printSpecBW1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Measurement\printSpecBWCR1.cs">
+      <DependentUpon>printSpecBWCR1.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Measurement\printSpecCR1.cs">
+      <DependentUpon>printSpecCR1.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Measurement\printSpecAW1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Measurement\printSpecAW1.Designer.cs">
+      <DependentUpon>printSpecAW1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Measurement\printSpecAWCR1.cs">
+      <DependentUpon>printSpecAWCR1.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Measurement\printSpecBW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Measurement\printSpecBW.Designer.cs">
       <DependentUpon>printSpecBW.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMeasurementStyle.cs">
+    <Compile Include="Measurement\frmMeasurementStyle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMeasurementStyle.Designer.cs">
+    <Compile Include="Measurement\frmMeasurementStyle.Designer.cs">
       <DependentUpon>frmMeasurementStyle.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTest.cs">
@@ -105,52 +327,52 @@
     <Compile Include="frmTest.Designer.cs">
       <DependentUpon>frmTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="printGradingCR.cs">
+    <Compile Include="Measurement\printGradingCR.cs">
       <DependentUpon>printGradingCR.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="findBuyer.cs">
+    <Compile Include="Measurement\findBuyer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="findBuyer.Designer.cs">
+    <Compile Include="Measurement\findBuyer.Designer.cs">
       <DependentUpon>findBuyer.cs</DependentUpon>
     </Compile>
-    <Compile Include="findGrading.cs">
+    <Compile Include="Measurement\findGrading.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="findGrading.Designer.cs">
+    <Compile Include="Measurement\findGrading.Designer.cs">
       <DependentUpon>findGrading.cs</DependentUpon>
     </Compile>
-    <Compile Include="findStyle.cs">
+    <Compile Include="Measurement\findStyle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="findStyle.Designer.cs">
+    <Compile Include="Measurement\findStyle.Designer.cs">
       <DependentUpon>findStyle.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBuyer.cs">
+    <Compile Include="Master\frmBuyer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBuyer.Designer.cs">
+    <Compile Include="Master\frmBuyer.Designer.cs">
       <DependentUpon>frmBuyer.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGrading.cs">
+    <Compile Include="Measurement\frmGrading.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGrading.Designer.cs">
+    <Compile Include="Measurement\frmGrading.Designer.cs">
       <DependentUpon>frmGrading.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMeasurement.cs">
+    <Compile Include="Measurement\frmMeasurement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMeasurement.Designer.cs">
+    <Compile Include="Measurement\frmMeasurement.Designer.cs">
       <DependentUpon>frmMeasurement.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSettingDirection.cs">
+    <Compile Include="Measurement\frmSettingDirection.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSettingDirection.Designer.cs">
+    <Compile Include="Measurement\frmSettingDirection.Designer.cs">
       <DependentUpon>frmSettingDirection.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMenu.cs">
@@ -159,69 +381,69 @@
     <Compile Include="frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSettingProp.cs">
+    <Compile Include="Measurement\frmSettingProp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSettingProp.Designer.cs">
+    <Compile Include="Measurement\frmSettingProp.Designer.cs">
       <DependentUpon>frmSettingProp.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSettingSize.cs">
+    <Compile Include="Measurement\frmSettingSize.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSettingSize.Designer.cs">
+    <Compile Include="Measurement\frmSettingSize.Designer.cs">
       <DependentUpon>frmSettingSize.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSize.cs">
+    <Compile Include="Master\frmSize.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSize.Designer.cs">
+    <Compile Include="Master\frmSize.Designer.cs">
       <DependentUpon>frmSize.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmStyle.cs">
+    <Compile Include="Master\frmStyle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmStyle.Designer.cs">
+    <Compile Include="Master\frmStyle.Designer.cs">
       <DependentUpon>frmStyle.cs</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
     <Compile Include="mysql.cs" />
-    <Compile Include="printGrading.cs">
+    <Compile Include="Measurement\printGrading.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="printGrading.Designer.cs">
+    <Compile Include="Measurement\printGrading.Designer.cs">
       <DependentUpon>printGrading.cs</DependentUpon>
     </Compile>
-    <Compile Include="printLWCR.cs">
+    <Compile Include="Measurement\printLWCR.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>printLWCR.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="printSpec.cs">
+    <Compile Include="Measurement\printSpec.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="printSpec.Designer.cs">
+    <Compile Include="Measurement\printSpec.Designer.cs">
       <DependentUpon>printSpec.cs</DependentUpon>
     </Compile>
-    <Compile Include="printSpecAW.cs">
+    <Compile Include="Measurement\printSpecAW.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="printSpecAW.Designer.cs">
+    <Compile Include="Measurement\printSpecAW.Designer.cs">
       <DependentUpon>printSpecAW.cs</DependentUpon>
     </Compile>
-    <Compile Include="printSpecAWCR.cs">
+    <Compile Include="Measurement\printSpecAWCR.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>printSpecAWCR.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="printSpecBWCR.cs">
+    <Compile Include="Measurement\printSpecBWCR.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>printSpecBWCR.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="printSpecCR.cs">
+    <Compile Include="Measurement\printSpecCR.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>printSpecCR.rpt</DependentUpon>
@@ -229,101 +451,183 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="frmSetting.cs">
+    <Compile Include="Measurement\frmSetting.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSetting.Designer.cs">
+    <Compile Include="Measurement\frmSetting.Designer.cs">
       <DependentUpon>frmSetting.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGradingSet.cs">
+    <Compile Include="Measurement\frmGradingSet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGradingSet.Designer.cs">
+    <Compile Include="Measurement\frmGradingSet.Designer.cs">
       <DependentUpon>frmGradingSet.cs</DependentUpon>
     </Compile>
+    <Compile Include="Quality\qcreportperline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\qcreportperline.Designer.cs">
+      <DependentUpon>qcreportperline.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\qcreportperstyle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\qcreportperstyle.Designer.cs">
+      <DependentUpon>qcreportperstyle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\reject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\reject.Designer.cs">
+      <DependentUpon>reject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\rejectCr.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rejectCr.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Quality\rejectRpt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\rejectRpt.Designer.cs">
+      <DependentUpon>rejectRpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\rejectRptFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\rejectRptFrm.Designer.cs">
+      <DependentUpon>rejectRptFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\rejectxsd.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rejectxsd.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="test.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>test.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="printSpecBW.resx">
+    <EmbeddedResource Include="Master\frmCategory.resx">
+      <DependentUpon>frmCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\frmColor.resx">
+      <DependentUpon>frmColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\frmLine.resx">
+      <DependentUpon>frmLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Measurement\frmInch.resx">
+      <DependentUpon>frmInch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Measurement\printGrading1.resx">
+      <DependentUpon>printGrading1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Measurement\printGradingCR1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>printGradingCR1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Measurement\printSpec1.resx">
+      <DependentUpon>printSpec1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Measurement\printSpecBW1.resx">
+      <DependentUpon>printSpecBW1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Measurement\printSpecBWCR1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>printSpecBWCR1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Measurement\printSpecCR1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>printSpecCR1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Measurement\printSpecAW1.resx">
+      <DependentUpon>printSpecAW1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Measurement\printSpecAWCR1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>printSpecAWCR1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Measurement\printSpecBW.resx">
       <DependentUpon>printSpecBW.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMeasurementStyle.resx">
+    <EmbeddedResource Include="Measurement\frmMeasurementStyle.resx">
       <DependentUpon>frmMeasurementStyle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTest.resx">
       <DependentUpon>frmTest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="printGrading.resx">
+    <EmbeddedResource Include="Measurement\printGrading.resx">
       <DependentUpon>printGrading.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="printGradingCR.rpt">
+    <EmbeddedResource Include="Measurement\printGradingCR.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>printGradingCR.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="findBuyer.resx">
+    <EmbeddedResource Include="Measurement\findBuyer.resx">
       <DependentUpon>findBuyer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="findGrading.resx">
+    <EmbeddedResource Include="Measurement\findGrading.resx">
       <DependentUpon>findGrading.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="findStyle.resx">
+    <EmbeddedResource Include="Measurement\findStyle.resx">
       <DependentUpon>findStyle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBuyer.resx">
+    <EmbeddedResource Include="Master\frmBuyer.resx">
       <DependentUpon>frmBuyer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGrading.resx">
+    <EmbeddedResource Include="Measurement\frmGrading.resx">
       <DependentUpon>frmGrading.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGradingSet.resx">
+    <EmbeddedResource Include="Measurement\frmGradingSet.resx">
       <DependentUpon>frmGradingSet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMeasurement.resx">
+    <EmbeddedResource Include="Measurement\frmMeasurement.resx">
       <DependentUpon>frmMeasurement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSettingDirection.resx">
+    <EmbeddedResource Include="Measurement\frmSettingDirection.resx">
       <DependentUpon>frmSettingDirection.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSetting.resx">
+    <EmbeddedResource Include="Measurement\frmSetting.resx">
       <DependentUpon>frmSetting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSettingProp.resx">
+    <EmbeddedResource Include="Measurement\frmSettingProp.resx">
       <DependentUpon>frmSettingProp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSettingSize.resx">
+    <EmbeddedResource Include="Measurement\frmSettingSize.resx">
       <DependentUpon>frmSettingSize.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSize.resx">
+    <EmbeddedResource Include="Master\frmSize.resx">
       <DependentUpon>frmSize.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmStyle.resx">
+    <EmbeddedResource Include="Master\frmStyle.resx">
       <DependentUpon>frmStyle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="printLWCR.rpt">
+    <EmbeddedResource Include="Measurement\printLWCR.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>printLWCR.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="printSpec.resx">
+    <EmbeddedResource Include="Measurement\printSpec.resx">
       <DependentUpon>printSpec.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="printSpecAW.resx">
+    <EmbeddedResource Include="Measurement\printSpecAW.resx">
       <DependentUpon>printSpecAW.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="printSpecAWCR.rpt">
+    <EmbeddedResource Include="Measurement\printSpecAWCR.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>printSpecAWCR.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="printSpecBWCR.rpt">
+    <EmbeddedResource Include="Measurement\printSpecBWCR.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>printSpecBWCR.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="printSpecCR.rpt">
+    <EmbeddedResource Include="Measurement\printSpecCR.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>printSpecCR.cs</LastGenOutput>
     </EmbeddedResource>
@@ -337,12 +641,101 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Quality\findStyleColor.resx">
+      <DependentUpon>findStyleColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\InspectionCr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InspectionCr.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\InspectionRpt.resx">
+      <DependentUpon>InspectionRpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\qcreportinspection.resx">
+      <DependentUpon>qcreportinspection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\qcreportinspectionCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>qcreportinspectionCR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\qcreportperstylesum.resx">
+      <DependentUpon>qcreportperstylesum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\qcreportperstylesumCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>qcreportperstylesumCR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\qcreportperstyleCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>qcreportperstyleCR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\frmPermak.resx">
+      <DependentUpon>frmPermak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\qcreportperlineCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>qcreportperlineCR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\frmInspection.resx">
+      <DependentUpon>frmInspection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\frmInspectionRpt.resx">
+      <DependentUpon>frmInspectionRpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\qcreportbysumFRM.resx">
+      <DependentUpon>qcreportbysumFRM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\qcreportbysumCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>qcreportbysumCR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\findStyleSetting.resx">
+      <DependentUpon>findStyleSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\frmInputQC.resx">
+      <DependentUpon>frmInputQC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\frmQCCheck.resx">
+      <DependentUpon>frmQCCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\frmReportbyDate.resx">
+      <DependentUpon>frmReportbyDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\frmSettingStyleQC.resx">
+      <DependentUpon>frmSettingStyleQC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\qcreportbydateCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>qcreportbydateCR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\qcreportbydateFrm.resx">
+      <DependentUpon>qcreportbydateFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\qcreportperline.resx">
+      <DependentUpon>qcreportperline.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\qcreportperstyle.resx">
+      <DependentUpon>qcreportperstyle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\reject.resx">
+      <DependentUpon>reject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\rejectCr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rejectCr.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\rejectRpt.resx">
+      <DependentUpon>rejectRpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\rejectRptFrm.resx">
+      <DependentUpon>rejectRptFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="test.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>test.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="Grading_TemporaryKey.pfx" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -352,6 +745,50 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Quality\qcreportbydate.xsc">
+      <DependentUpon>qcreportbydate.xsd</DependentUpon>
+    </None>
+    <None Include="Quality\qcreportbydate.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>qcreportbydate.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Quality\qcreportbydate.xss">
+      <DependentUpon>qcreportbydate.xsd</DependentUpon>
+    </None>
+    <None Include="Quality\qcreportinspection.xsc">
+      <DependentUpon>qcreportinspection.xsd</DependentUpon>
+    </None>
+    <None Include="Quality\qcreportinspection.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>qcreportinspection1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Quality\qcreportinspection.xss">
+      <DependentUpon>qcreportinspection.xsd</DependentUpon>
+    </None>
+    <None Include="Quality\qcreportinspectiondetail.xsc">
+      <DependentUpon>qcreportinspectiondetail.xsd</DependentUpon>
+    </None>
+    <None Include="Quality\qcreportinspectiondetail.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>qcreportinspectiondetail.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Quality\qcreportinspectiondetail.xss">
+      <DependentUpon>qcreportinspectiondetail.xsd</DependentUpon>
+    </None>
+    <None Include="Quality\rejectxsd.xsc">
+      <DependentUpon>rejectxsd.xsd</DependentUpon>
+    </None>
+    <None Include="Quality\rejectxsd.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>rejectxsd.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Quality\rejectxsd.xss">
+      <DependentUpon>rejectxsd.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
