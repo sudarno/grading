@@ -36,13 +36,6 @@
             this.cmdSave = new System.Windows.Forms.Button();
             this.masterDataGridView = new System.Windows.Forms.DataGridView();
             this.detailsDataGridView = new System.Windows.Forms.DataGridView();
-            this.hSTYLEID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hCOLORID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hID1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hMAJOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hMINOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateQC2 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.cmdFind = new System.Windows.Forms.Button();
@@ -50,6 +43,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cmdPrintDetail = new System.Windows.Forms.Button();
             this.cmdPrint = new System.Windows.Forms.Button();
+            this.hSTYLEID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hCOLORID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hID1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hMAJOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hMINOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.masterDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detailsDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -137,48 +137,6 @@
             this.detailsDataGridView.Size = new System.Drawing.Size(912, 150);
             this.detailsDataGridView.TabIndex = 35;
             // 
-            // hSTYLEID
-            // 
-            this.hSTYLEID.HeaderText = "STYLE";
-            this.hSTYLEID.Name = "hSTYLEID";
-            this.hSTYLEID.Visible = false;
-            // 
-            // hCOLORID
-            // 
-            this.hCOLORID.HeaderText = "COLORID";
-            this.hCOLORID.Name = "hCOLORID";
-            this.hCOLORID.Visible = false;
-            // 
-            // hID1
-            // 
-            this.hID1.HeaderText = "ID1";
-            this.hID1.Name = "hID1";
-            this.hID1.Visible = false;
-            // 
-            // hID
-            // 
-            this.hID.HeaderText = "ID";
-            this.hID.Name = "hID";
-            this.hID.Width = 50;
-            // 
-            // hMAJOR
-            // 
-            this.hMAJOR.HeaderText = "MAJOR";
-            this.hMAJOR.Name = "hMAJOR";
-            this.hMAJOR.Width = 50;
-            // 
-            // hMINOR
-            // 
-            this.hMINOR.HeaderText = "MINOR";
-            this.hMINOR.Name = "hMINOR";
-            this.hMINOR.Width = 50;
-            // 
-            // hNAME
-            // 
-            this.hNAME.HeaderText = "DECRIPTION";
-            this.hNAME.Name = "hNAME";
-            this.hNAME.Width = 250;
-            // 
             // dateQC2
             // 
             this.dateQC2.Location = new System.Drawing.Point(260, 15);
@@ -241,6 +199,48 @@
             this.cmdPrint.UseVisualStyleBackColor = true;
             this.cmdPrint.Click += new System.EventHandler(this.cmdPrint_Click);
             // 
+            // hSTYLEID
+            // 
+            this.hSTYLEID.HeaderText = "STYLE";
+            this.hSTYLEID.Name = "hSTYLEID";
+            this.hSTYLEID.Visible = false;
+            // 
+            // hCOLORID
+            // 
+            this.hCOLORID.HeaderText = "COLORID";
+            this.hCOLORID.Name = "hCOLORID";
+            this.hCOLORID.Visible = false;
+            // 
+            // hID1
+            // 
+            this.hID1.HeaderText = "ID1";
+            this.hID1.Name = "hID1";
+            this.hID1.Visible = false;
+            // 
+            // hID
+            // 
+            this.hID.HeaderText = "NO";
+            this.hID.Name = "hID";
+            this.hID.Width = 50;
+            // 
+            // hMAJOR
+            // 
+            this.hMAJOR.HeaderText = "MAJOR";
+            this.hMAJOR.Name = "hMAJOR";
+            this.hMAJOR.Width = 50;
+            // 
+            // hMINOR
+            // 
+            this.hMINOR.HeaderText = "MINOR";
+            this.hMINOR.Name = "hMINOR";
+            this.hMINOR.Width = 50;
+            // 
+            // hNAME
+            // 
+            this.hNAME.HeaderText = "DECRIPTION";
+            this.hNAME.Name = "hNAME";
+            this.hNAME.Width = 250;
+            // 
             // frmInspection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -286,6 +286,8 @@
         private System.Windows.Forms.Button cmdFind;
         private System.Windows.Forms.TextBox txtStyle;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button cmdPrintDetail;
+        private System.Windows.Forms.Button cmdPrint;
         private System.Windows.Forms.DataGridViewTextBoxColumn hSTYLEID;
         private System.Windows.Forms.DataGridViewTextBoxColumn hCOLORID;
         private System.Windows.Forms.DataGridViewTextBoxColumn hID1;
@@ -293,7 +295,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hMAJOR;
         private System.Windows.Forms.DataGridViewTextBoxColumn hMINOR;
         private System.Windows.Forms.DataGridViewTextBoxColumn hNAME;
-        private System.Windows.Forms.Button cmdPrintDetail;
-        private System.Windows.Forms.Button cmdPrint;
     }
 }

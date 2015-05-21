@@ -16,7 +16,7 @@ namespace Grading.Quality
         public SetParameterValueDelegate SetParameterValueCallback;
         string style;
         string color;
-        
+        string buyerid;
         //item reject detail
         private string STYLEID { get; set; } //1
         private string COLORID { get; set; } //2
@@ -50,6 +50,7 @@ namespace Grading.Quality
             txtBuyerName.Text = SetBuyerName;
             style = SetStyleID;
             color = SetcolorID;
+            buyerid = SetbuyerID;
         }
         private bool insertRejectDetail(string STYLEID, string COLORID, string CODE, string SIZEID, double QTY)
         {
@@ -176,28 +177,36 @@ namespace Grading.Quality
 
                 txtStyleID.DataBindings.Clear();
                 txtColorID.DataBindings.Clear();
+                txtBuyerID.DataBindings.Clear();
+                dateGrading.DataBindings.Clear();
 
                 //txtStyleID.DataBindings.Add(new Binding("Text", masterBindingSource, "STYLEID", true, DataSourceUpdateMode.OnPropertyChanged));
                 //txtColorID.DataBindings.Add(new Binding("Text", masterBindingSource, "COLORID", true, DataSourceUpdateMode.OnPropertyChanged));
                 txtStyleID.DataBindings.Add(new Binding("Text", masterBindingSource, "STYLEID", true, DataSourceUpdateMode.OnPropertyChanged));
                 txtColorID.DataBindings.Add(new Binding("Text", masterBindingSource, "COLORID", true, DataSourceUpdateMode.OnPropertyChanged));
-
+                txtBuyerID.DataBindings.Add(new Binding("Text", masterBindingSource, "BUYERID", true, DataSourceUpdateMode.OnPropertyChanged));
+                dateGrading.DataBindings.Add(new Binding("Text", masterBindingSource, "DATE", true, DataSourceUpdateMode.OnPropertyChanged));
 
                 if (data.Tables["reject"].Rows.Count < 1)
                 {
                     masterBindingSource.AddNew(); //inisial untuk insert new
                     txtStyleID.Text = style;
                     txtColorID.Text = color;
+                    txtBuyerID.Text = buyerid;
+                    
                     dateGrading.Value = DateTime.Now;
+                    dateGrading.ResetText();
                 }
                 else
                 {
                     txtStyleID.DataBindings.Clear();
                     txtColorID.DataBindings.Clear();
+                    txtBuyerID.DataBindings.Clear();
                     dateGrading.DataBindings.Clear();
 
                     txtStyleID.DataBindings.Add(new Binding("Text", masterBindingSource, "STYLEID", true, DataSourceUpdateMode.OnPropertyChanged));
                     txtColorID.DataBindings.Add(new Binding("Text", masterBindingSource, "COLORID", true, DataSourceUpdateMode.OnPropertyChanged));
+                    txtBuyerID.DataBindings.Add(new Binding("Text", masterBindingSource, "BUYERID", true, DataSourceUpdateMode.OnPropertyChanged));
                     dateGrading.DataBindings.Add(new Binding("Text", masterBindingSource, "DATE", true, DataSourceUpdateMode.OnPropertyChanged));
 
                 }
@@ -306,11 +315,11 @@ namespace Grading.Quality
                 detailsDataGridView.Columns.Clear();
 
                 detailsDataGridView.Columns.Add("STYLEID", "STYLEID");
-                detailsDataGridView.Columns["STYLEID"].Visible = true;
+                detailsDataGridView.Columns["STYLEID"].Visible = false;
                 detailsDataGridView.Columns.Add("COLORID", "COLORID");
-                detailsDataGridView.Columns["COLORID"].Visible = true;
+                detailsDataGridView.Columns["COLORID"].Visible = false;
                 detailsDataGridView.Columns.Add("CODE1", "CODE1"); //CODE
-                detailsDataGridView.Columns["CODE1"].Visible = true;
+                detailsDataGridView.Columns["CODE1"].Visible = false;
          
 
                 DataGridViewComboBoxColumn MEColumn = new DataGridViewComboBoxColumn();
@@ -442,6 +451,11 @@ namespace Grading.Quality
             this.SetParameterValueCallback += new SetParameterValueDelegate(f.SetParamValueCallbackFn);
             SetParameterValueCallback(date1.Value.ToString("yyyy-MM-dd"), date2.Value.ToString("yyyy-MM-dd"));
             f.Show();
+        }
+
+        private void frmreject_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

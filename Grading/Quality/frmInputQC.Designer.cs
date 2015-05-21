@@ -134,6 +134,7 @@
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Report";
+            this.groupBox1.Visible = false;
             // 
             // cmdSumPerStyle
             // 
@@ -143,6 +144,7 @@
             this.cmdSumPerStyle.TabIndex = 43;
             this.cmdSumPerStyle.Text = "Summary Per Style";
             this.cmdSumPerStyle.UseVisualStyleBackColor = true;
+            this.cmdSumPerStyle.Visible = false;
             // 
             // cmdPerStyle
             // 
@@ -152,6 +154,7 @@
             this.cmdPerStyle.TabIndex = 42;
             this.cmdPerStyle.Text = "Detail Per Style";
             this.cmdPerStyle.UseVisualStyleBackColor = true;
+            this.cmdPerStyle.Visible = false;
             // 
             // cmdPerLine
             // 
@@ -161,6 +164,7 @@
             this.cmdPerLine.TabIndex = 41;
             this.cmdPerLine.Text = "Detail PerLine";
             this.cmdPerLine.UseVisualStyleBackColor = true;
+            this.cmdPerLine.Visible = false;
             this.cmdPerLine.Click += new System.EventHandler(this.cmdPerLine_Click);
             // 
             // cmdSummary
@@ -171,6 +175,7 @@
             this.cmdSummary.TabIndex = 40;
             this.cmdSummary.Text = "Summary PerLine";
             this.cmdSummary.UseVisualStyleBackColor = true;
+            this.cmdSummary.Visible = false;
             // 
             // label2
             // 
@@ -180,6 +185,7 @@
             this.label2.Size = new System.Drawing.Size(20, 13);
             this.label2.TabIndex = 39;
             this.label2.Text = "To";
+            this.label2.Visible = false;
             // 
             // label3
             // 
@@ -189,6 +195,7 @@
             this.label3.Size = new System.Drawing.Size(30, 13);
             this.label3.TabIndex = 38;
             this.label3.Text = "From";
+            this.label3.Visible = false;
             // 
             // date2
             // 
@@ -196,6 +203,7 @@
             this.date2.Name = "date2";
             this.date2.Size = new System.Drawing.Size(181, 20);
             this.date2.TabIndex = 37;
+            this.date2.Visible = false;
             // 
             // date1
             // 
@@ -203,6 +211,7 @@
             this.date1.Name = "date1";
             this.date1.Size = new System.Drawing.Size(184, 20);
             this.date1.TabIndex = 36;
+            this.date1.Visible = false;
             // 
             // label4
             // 
@@ -247,6 +256,7 @@
             this.Controls.Add(this.masterDataGridView);
             this.Name = "frmInputQC";
             this.Text = "frmInputQC";
+            this.Load += new System.EventHandler(this.frmInputQC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.masterDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

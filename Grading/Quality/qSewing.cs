@@ -159,7 +159,7 @@ namespace Grading
                 masterDataGridView.Columns.Add(ColumnDate);
 
                 DataGridViewTextBoxColumn ColumnQtyCheck = new DataGridViewTextBoxColumn();
-                ColumnQtyCheck.HeaderText = "QTY CHECK";
+                ColumnQtyCheck.HeaderText = "QTY REPAIR";
                 ColumnQtyCheck.Width = 60;
                 ColumnQtyCheck.DataPropertyName = "QTYCHECK";
                 ColumnQtyCheck.Name = "QTYCHECK";
@@ -303,7 +303,7 @@ namespace Grading
                 ColumnDate.Width = 100;
                 ColumnDate.DataPropertyName = "DATE";
                 ColumnDate.Name = "DATE";
-                ColumnDate.Visible = false;
+                ColumnDate.Visible = true;
                 masterDataGridView.Columns.Add(ColumnDate);
 
                 DataGridViewTextBoxColumn ColumnQtyCheck = new DataGridViewTextBoxColumn();
@@ -333,6 +333,7 @@ namespace Grading
         private void frmQCCheck_Load(object sender, EventArgs e)
         {
             getData(dateQC.Value.Date);
+            cmdSave.Enabled = true;
         }
 
         private void cmdSave_Click(object sender, EventArgs e)
@@ -380,6 +381,7 @@ namespace Grading
         private void cmdView_Click(object sender, EventArgs e)
         {
             getData(dateQC.Value.Date);
+            cmdSave.Enabled = true;
         }
 
         private void cmdClose_Click(object sender, EventArgs e)
@@ -501,6 +503,13 @@ namespace Grading
         private void cmdFind_Click(object sender, EventArgs e)
         {
             getData(txtStyle.Text);
+            cmdSave.Enabled = false;
+        }
+
+        private void dateQC_ValueChanged(object sender, EventArgs e)
+        {
+            getData(dateQC.Value.Date);
+            cmdSave.Enabled = true;
         }
 
      

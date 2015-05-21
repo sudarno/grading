@@ -51,7 +51,14 @@
             this.qualityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingQtyStyleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.inputQCCuttingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inputQCCheckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inputQCFinishingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inputRepairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.reportQCSewingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportQCFinishingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.inputFinalInspectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inputRejectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -59,6 +66,7 @@
             this.reportFinalInspectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportRejectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.test1 = new Grading.test();
+            this.rejectListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,7 +116,8 @@
             this.toolStripSeparator1,
             this.lineToolStripMenuItem,
             this.colorToolStripMenuItem,
-            this.categoryToolStripMenuItem});
+            this.categoryToolStripMenuItem,
+            this.rejectListToolStripMenuItem});
             this.masterToolStripMenuItem.Name = "masterToolStripMenuItem";
             this.masterToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.masterToolStripMenuItem.Text = "Master";
@@ -207,6 +216,7 @@
             this.measurementChartToolStripMenuItem.Name = "measurementChartToolStripMenuItem";
             this.measurementChartToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.measurementChartToolStripMenuItem.Text = "Measurement Chart";
+            this.measurementChartToolStripMenuItem.Visible = false;
             this.measurementChartToolStripMenuItem.Click += new System.EventHandler(this.measurementChartToolStripMenuItem_Click);
             // 
             // measurementGradingToolStripMenuItem
@@ -229,7 +239,14 @@
             this.qualityToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.settingQtyStyleToolStripMenuItem,
             this.toolStripSeparator3,
+            this.inputQCCuttingToolStripMenuItem,
             this.inputQCCheckToolStripMenuItem,
+            this.inputQCFinishingToolStripMenuItem,
+            this.inputRepairToolStripMenuItem,
+            this.toolStripSeparator4,
+            this.reportQCSewingToolStripMenuItem,
+            this.reportQCFinishingToolStripMenuItem,
+            this.toolStripSeparator5,
             this.inputFinalInspectionToolStripMenuItem,
             this.inputRejectionToolStripMenuItem,
             this.toolStripSeparator2,
@@ -252,12 +269,57 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(192, 6);
             // 
+            // inputQCCuttingToolStripMenuItem
+            // 
+            this.inputQCCuttingToolStripMenuItem.Name = "inputQCCuttingToolStripMenuItem";
+            this.inputQCCuttingToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.inputQCCuttingToolStripMenuItem.Text = "Input QC Cutting";
+            this.inputQCCuttingToolStripMenuItem.Click += new System.EventHandler(this.inputQCCuttingToolStripMenuItem_Click);
+            // 
             // inputQCCheckToolStripMenuItem
             // 
             this.inputQCCheckToolStripMenuItem.Name = "inputQCCheckToolStripMenuItem";
             this.inputQCCheckToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.inputQCCheckToolStripMenuItem.Text = "Input QC Check";
+            this.inputQCCheckToolStripMenuItem.Text = "Input QC Sewing";
             this.inputQCCheckToolStripMenuItem.Click += new System.EventHandler(this.inputQCCheckToolStripMenuItem_Click);
+            // 
+            // inputQCFinishingToolStripMenuItem
+            // 
+            this.inputQCFinishingToolStripMenuItem.Name = "inputQCFinishingToolStripMenuItem";
+            this.inputQCFinishingToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.inputQCFinishingToolStripMenuItem.Text = "Input QC Finishing";
+            this.inputQCFinishingToolStripMenuItem.Click += new System.EventHandler(this.inputQCFinishingToolStripMenuItem_Click);
+            // 
+            // inputRepairToolStripMenuItem
+            // 
+            this.inputRepairToolStripMenuItem.Name = "inputRepairToolStripMenuItem";
+            this.inputRepairToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.inputRepairToolStripMenuItem.Text = "Input QC Repair";
+            this.inputRepairToolStripMenuItem.Click += new System.EventHandler(this.inputRepairToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(192, 6);
+            // 
+            // reportQCSewingToolStripMenuItem
+            // 
+            this.reportQCSewingToolStripMenuItem.Name = "reportQCSewingToolStripMenuItem";
+            this.reportQCSewingToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.reportQCSewingToolStripMenuItem.Text = "Report QC Sewing";
+            this.reportQCSewingToolStripMenuItem.Click += new System.EventHandler(this.reportQCSewingToolStripMenuItem_Click);
+            // 
+            // reportQCFinishingToolStripMenuItem
+            // 
+            this.reportQCFinishingToolStripMenuItem.Name = "reportQCFinishingToolStripMenuItem";
+            this.reportQCFinishingToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.reportQCFinishingToolStripMenuItem.Text = "Report QC Finishing";
+            this.reportQCFinishingToolStripMenuItem.Click += new System.EventHandler(this.reportQCFinishingToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(192, 6);
             // 
             // inputFinalInspectionToolStripMenuItem
             // 
@@ -283,6 +345,7 @@
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
             this.reportToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.reportToolStripMenuItem.Text = "Report QC Check";
+            this.reportToolStripMenuItem.Visible = false;
             this.reportToolStripMenuItem.Click += new System.EventHandler(this.reportToolStripMenuItem_Click);
             // 
             // reportFinalInspectionToolStripMenuItem
@@ -298,6 +361,13 @@
             this.reportRejectionToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.reportRejectionToolStripMenuItem.Text = "Report Rejection";
             this.reportRejectionToolStripMenuItem.Click += new System.EventHandler(this.reportRejectionToolStripMenuItem_Click);
+            // 
+            // rejectListToolStripMenuItem
+            // 
+            this.rejectListToolStripMenuItem.Name = "rejectListToolStripMenuItem";
+            this.rejectListToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.rejectListToolStripMenuItem.Text = "Reject List";
+            this.rejectListToolStripMenuItem.Click += new System.EventHandler(this.rejectListToolStripMenuItem_Click);
             // 
             // Menu
             // 
@@ -351,6 +421,14 @@
         private System.Windows.Forms.ToolStripMenuItem categoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inputRejectionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportRejectionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inputQCCuttingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inputQCFinishingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inputRepairToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem reportQCSewingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportQCFinishingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripMenuItem rejectListToolStripMenuItem;
     }
 }
 

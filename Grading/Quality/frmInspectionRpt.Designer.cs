@@ -39,7 +39,7 @@
             // 
             // cmdXsd
             // 
-            this.cmdXsd.Location = new System.Drawing.Point(59, 143);
+            this.cmdXsd.Location = new System.Drawing.Point(85, 164);
             this.cmdXsd.Name = "cmdXsd";
             this.cmdXsd.Size = new System.Drawing.Size(75, 23);
             this.cmdXsd.TabIndex = 22;
@@ -103,7 +103,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(325, 187);
+            this.ClientSize = new System.Drawing.Size(325, 138);
             this.Controls.Add(this.cmdPrintDetail);
             this.Controls.Add(this.cmdXsd);
             this.Controls.Add(this.cmdPrint);

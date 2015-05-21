@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="qrrepairsumds" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="qrrepairsumds" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="qrrepairsumtbl">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BUYERID" type="xs:string" minOccurs="0" />
+              <xs:element name="STYLEID" type="xs:string" minOccurs="0" />
+              <xs:element name="COLORID" type="xs:string" minOccurs="0" />
+              <xs:element name="LINEID" type="xs:string" minOccurs="0" />
+              <xs:element name="QTYREPAIR" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="qrsewingday" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="qrsewingday" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="qrsewingday" msprop:Generator_DataSetName="qrsewingday">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="qrsewingday" msprop:Generator_TableClassName="qrsewingdayDataTable" msprop:Generator_TableVarName="tableqrsewingday" msprop:Generator_TablePropName="_qrsewingday" msprop:Generator_RowDeletingName="qrsewingdayRowDeleting" msprop:Generator_RowChangingName="qrsewingdayRowChanging" msprop:Generator_RowEvHandlerName="qrsewingdayRowChangeEventHandler" msprop:Generator_RowDeletedName="qrsewingdayRowDeleted" msprop:Generator_UserTableName="qrsewingday" msprop:Generator_RowChangedName="qrsewingdayRowChanged" msprop:Generator_RowEvArgName="qrsewingdayRowChangeEvent" msprop:Generator_RowClassName="qrsewingdayRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DATE" msprop:Generator_ColumnVarNameInTable="columnDATE" msprop:Generator_ColumnPropNameInRow="DATE" msprop:Generator_ColumnPropNameInTable="DATEColumn" msprop:Generator_UserColumnName="DATE" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="date1" msprop:Generator_ColumnVarNameInTable="columndate1" msprop:Generator_ColumnPropNameInRow="date1" msprop:Generator_ColumnPropNameInTable="date1Column" msprop:Generator_UserColumnName="date1" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="date2" msprop:Generator_ColumnVarNameInTable="columndate2" msprop:Generator_ColumnPropNameInRow="date2" msprop:Generator_ColumnPropNameInTable="date2Column" msprop:Generator_UserColumnName="date2" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="COLORID" msprop:Generator_ColumnVarNameInTable="columnCOLORID" msprop:Generator_ColumnPropNameInRow="COLORID" msprop:Generator_ColumnPropNameInTable="COLORIDColumn" msprop:Generator_UserColumnName="COLORID" type="xs:string" minOccurs="0" />
+              <xs:element name="LINEID" msprop:Generator_ColumnVarNameInTable="columnLINEID" msprop:Generator_ColumnPropNameInRow="LINEID" msprop:Generator_ColumnPropNameInTable="LINEIDColumn" msprop:Generator_UserColumnName="LINEID" type="xs:string" minOccurs="0" />
+              <xs:element name="NAME" msprop:Generator_ColumnVarNameInTable="columnNAME" msprop:Generator_ColumnPropNameInRow="NAME" msprop:Generator_ColumnPropNameInTable="NAMEColumn" msprop:Generator_UserColumnName="NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="BUYERID" msprop:Generator_ColumnVarNameInTable="columnBUYERID" msprop:Generator_ColumnPropNameInRow="BUYERID" msprop:Generator_ColumnPropNameInTable="BUYERIDColumn" msprop:Generator_UserColumnName="BUYERID" type="xs:string" minOccurs="0" />
+              <xs:element name="BUYERNAME" msprop:Generator_ColumnVarNameInTable="columnBUYERNAME" msprop:Generator_ColumnPropNameInRow="BUYERNAME" msprop:Generator_ColumnPropNameInTable="BUYERNAMEColumn" msprop:Generator_UserColumnName="BUYERNAME" type="xs:string" minOccurs="0" />
+              <xs:element name="STYLEID" msprop:Generator_ColumnVarNameInTable="columnSTYLEID" msprop:Generator_ColumnPropNameInRow="STYLEID" msprop:Generator_ColumnPropNameInTable="STYLEIDColumn" msprop:Generator_UserColumnName="STYLEID" type="xs:string" minOccurs="0" />
+              <xs:element name="STYLENAME" msprop:Generator_ColumnVarNameInTable="columnSTYLENAME" msprop:Generator_ColumnPropNameInRow="STYLENAME" msprop:Generator_ColumnPropNameInTable="STYLENAMEColumn" msprop:Generator_UserColumnName="STYLENAME" type="xs:string" minOccurs="0" />
+              <xs:element name="QTYORDER" msprop:Generator_ColumnVarNameInTable="columnQTYORDER" msprop:Generator_ColumnPropNameInRow="QTYORDER" msprop:Generator_ColumnPropNameInTable="QTYORDERColumn" msprop:Generator_UserColumnName="QTYORDER" type="xs:int" minOccurs="0" />
+              <xs:element name="QTYCUTT" msprop:Generator_ColumnVarNameInTable="columnQTYCUTT" msprop:Generator_ColumnPropNameInRow="QTYCUTT" msprop:Generator_ColumnPropNameInTable="QTYCUTTColumn" msprop:Generator_UserColumnName="QTYCUTT" type="xs:decimal" minOccurs="0" />
+              <xs:element name="QTYPASS" msprop:Generator_ColumnVarNameInTable="columnQTYPASS" msprop:Generator_ColumnPropNameInRow="QTYPASS" msprop:Generator_ColumnPropNameInTable="QTYPASSColumn" msprop:Generator_UserColumnName="QTYPASS" type="xs:int" minOccurs="0" />
+              <xs:element name="QTYCHECK" msprop:Generator_ColumnVarNameInTable="columnQTYCHECK" msprop:Generator_ColumnPropNameInRow="QTYCHECK" msprop:Generator_ColumnPropNameInTable="QTYCHECKColumn" msprop:Generator_UserColumnName="QTYCHECK" type="xs:int" minOccurs="0" />
+              <xs:element name="TotQtyPass" msprop:Generator_ColumnVarNameInTable="columnTotQtyPass" msprop:Generator_ColumnPropNameInRow="TotQtyPass" msprop:Generator_ColumnPropNameInTable="TotQtyPassColumn" msprop:Generator_UserColumnName="TotQtyPass" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotQtyCheck" msprop:Generator_ColumnVarNameInTable="columnTotQtyCheck" msprop:Generator_ColumnPropNameInRow="TotQtyCheck" msprop:Generator_ColumnPropNameInTable="TotQtyCheckColumn" msprop:Generator_UserColumnName="TotQtyCheck" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

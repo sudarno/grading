@@ -120,14 +120,14 @@ namespace Grading.Quality
                     QTYORDERColumn.Name = "QTYORDER";
                     detailsDataGridView.Columns.Add(QTYORDERColumn);
 
-
+                    /*
                     DataGridViewTextBoxColumn QTYCUTTColumn = new DataGridViewTextBoxColumn();
                     QTYCUTTColumn.HeaderText = "QTY CUTT";
                     QTYCUTTColumn.Width = 100;
                     QTYCUTTColumn.DataPropertyName = "QTYCUTT";
                     QTYCUTTColumn.Name = "QTYCUTT";
                     detailsDataGridView.Columns.Add(QTYCUTTColumn);
-
+                    */
                     DataGridViewTextBoxColumn QTYSHIPColumn = new DataGridViewTextBoxColumn();
                     QTYSHIPColumn.HeaderText = "QTY SHIP";
                     QTYSHIPColumn.Width = 100;

@@ -211,5 +211,50 @@ namespace Grading
             f.Show();
 
         }
+
+        private void inputQCCuttingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            qCutting f = new qCutting();
+            f.MdiParent = this;
+            f.Show();
+
+        }
+
+        private void inputQCFinishingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            qFinishing f = new qFinishing();
+            f.MdiParent = this;
+            f.Show();
+
+        }
+
+        private void inputRepairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            qRepair f = new qRepair();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void reportQCSewingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            qrSewing f = new qrSewing();
+            f.MdiParent = this;
+            f.Show();
+
+        }
+
+        private void reportQCFinishingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            qrFinishing f = new qrFinishing();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void rejectListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRejectList f = new frmRejectList();
+            f.MdiParent = this;
+            f.Show();
+        }
     }
 }

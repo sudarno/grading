@@ -42,7 +42,6 @@ namespace Grading.Quality
                         " INNER JOIN style ON style.STYLEID=qccheck.STYLEID" +
                         " WHERE date(qccheck.DATE) BETWEEN date('" + date1 + "') AND date('" + date2 + "')";
 
-
                 masterDataAdapter = new MySqlDataAdapter(strQuery, connection);
                 masterDataAdapter.Fill(dataPrint, "qcreportbydate");
 

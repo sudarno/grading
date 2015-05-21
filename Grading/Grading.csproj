@@ -114,17 +114,121 @@
     <Compile Include="Master\frmLine.Designer.cs">
       <DependentUpon>frmLine.cs</DependentUpon>
     </Compile>
+    <Compile Include="Master\frmRejectList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\frmRejectList.Designer.cs">
+      <DependentUpon>frmRejectList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Measurement\frmInch.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Measurement\frmInch.Designer.cs">
       <DependentUpon>frmInch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Quality\qrFinishingSubCr.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>qrFinishingSubCr.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Quality\qrFinishingSumCr.cs">
+      <DependentUpon>qrFinishingSumCr.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Quality\qrFinishingCrBck.cs">
+      <DependentUpon>qrFinishingCrBck.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Quality\qrFinishing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\qrFinishing.Designer.cs">
+      <DependentUpon>qrFinishing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\qrfinishing1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>qrfinishing.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\qrFinishingCr.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>qrFinishingCr.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Quality\qrFinishingFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\qrFinishingFrm.Designer.cs">
+      <DependentUpon>qrFinishingFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\qrFinishingSumFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\qrFinishingSumFrm.Designer.cs">
+      <DependentUpon>qrFinishingSumFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\qrFinishingSumSubCr.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>qrFinishingSumSubCr.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Quality\qrrepairdetail.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>qrrepairdetail.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\qrrepairsum.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>qrrepairsum.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\qrSewingStyleSumCR.cs">
+      <DependentUpon>qrSewingStyleSumCR.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Quality\qrsewingstyle.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>qrsewingstyle.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\qrSewingStyleCR.cs">
+      <DependentUpon>qrSewingStyleCR.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Quality\qrSewingCR.cs">
+      <DependentUpon>qrSewingCR.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Quality\qCutting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\qCutting.Designer.cs">
+      <DependentUpon>qCutting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Quality\findStyleColor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Quality\findStyleColor.Designer.cs">
       <DependentUpon>findStyleColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\qFinishing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\qFinishing.Designer.cs">
+      <DependentUpon>qFinishing.cs</DependentUpon>
     </Compile>
     <Compile Include="Quality\InspectionCr.cs">
       <AutoGen>True</AutoGen>
@@ -255,11 +359,46 @@
     <Compile Include="Quality\qcreportbydateFrm.Designer.cs">
       <DependentUpon>qcreportbydateFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Quality\frmQCCheck.cs">
+    <Compile Include="Quality\qRepair.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Quality\frmQCCheck.Designer.cs">
-      <DependentUpon>frmQCCheck.cs</DependentUpon>
+    <Compile Include="Quality\qRepair.Designer.cs">
+      <DependentUpon>qRepair.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\qrSewing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\qrSewing.Designer.cs">
+      <DependentUpon>qrSewing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\qrsewingday.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>qrsewingday.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\qrSewingFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\qrSewingFrm.Designer.cs">
+      <DependentUpon>qrSewingFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\qrSewingStyleFRM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\qrSewingStyleFRM.Designer.cs">
+      <DependentUpon>qrSewingStyleFRM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\qrSewingStyleSumFRM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\qrSewingStyleSumFRM.Designer.cs">
+      <DependentUpon>qrSewingStyleSumFRM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\qSewing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\qSewing.Designer.cs">
+      <DependentUpon>qSewing.cs</DependentUpon>
     </Compile>
     <Compile Include="Measurement\printGrading1.cs">
       <SubType>Form</SubType>
@@ -520,6 +659,9 @@
     <EmbeddedResource Include="Master\frmLine.resx">
       <DependentUpon>frmLine.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Master\frmRejectList.resx">
+      <DependentUpon>frmRejectList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Measurement\frmInch.resx">
       <DependentUpon>frmInch.cs</DependentUpon>
     </EmbeddedResource>
@@ -641,8 +783,55 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Quality\qrFinishingSubCr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>qrFinishingSubCr.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\qrFinishingSumCr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>qrFinishingSumCr.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\qrFinishingCrBck.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>qrFinishingCrBck.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\qrFinishing.resx">
+      <DependentUpon>qrFinishing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\qrFinishingCr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>qrFinishingCr.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\qrFinishingFrm.resx">
+      <DependentUpon>qrFinishingFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\qrFinishingSumFrm.resx">
+      <DependentUpon>qrFinishingSumFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\qrFinishingSumSubCr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>qrFinishingSumSubCr.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\qrSewingStyleSumCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>qrSewingStyleSumCR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\qrSewingStyleCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>qrSewingStyleCR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\qrSewingCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>qrSewingCR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\qCutting.resx">
+      <DependentUpon>qCutting.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Quality\findStyleColor.resx">
       <DependentUpon>findStyleColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\qFinishing.resx">
+      <DependentUpon>qFinishing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Quality\InspectionCr.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -695,8 +884,23 @@
     <EmbeddedResource Include="Quality\frmInputQC.resx">
       <DependentUpon>frmInputQC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Quality\frmQCCheck.resx">
-      <DependentUpon>frmQCCheck.cs</DependentUpon>
+    <EmbeddedResource Include="Quality\qRepair.resx">
+      <DependentUpon>qRepair.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\qrSewing.resx">
+      <DependentUpon>qrSewing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\qrSewingFrm.resx">
+      <DependentUpon>qrSewingFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\qrSewingStyleFRM.resx">
+      <DependentUpon>qrSewingStyleFRM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\qrSewingStyleSumFRM.resx">
+      <DependentUpon>qrSewingStyleSumFRM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\qSewing.resx">
+      <DependentUpon>qSewing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Quality\frmReportbyDate.resx">
       <DependentUpon>frmReportbyDate.cs</DependentUpon>
@@ -777,6 +981,61 @@
     </None>
     <None Include="Quality\qcreportinspectiondetail.xss">
       <DependentUpon>qcreportinspectiondetail.xsd</DependentUpon>
+    </None>
+    <None Include="Quality\qrfinishing.xsc">
+      <DependentUpon>qrfinishing.xsd</DependentUpon>
+    </None>
+    <None Include="Quality\qrfinishing.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>qrfinishing1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Quality\qrfinishing.xss">
+      <DependentUpon>qrfinishing.xsd</DependentUpon>
+    </None>
+    <None Include="Quality\qrrepairdetail.xsc">
+      <DependentUpon>qrrepairdetail.xsd</DependentUpon>
+    </None>
+    <None Include="Quality\qrrepairdetail.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>qrrepairdetail.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Quality\qrrepairdetail.xss">
+      <DependentUpon>qrrepairdetail.xsd</DependentUpon>
+    </None>
+    <None Include="Quality\qrrepairsum.xsc">
+      <DependentUpon>qrrepairsum.xsd</DependentUpon>
+    </None>
+    <None Include="Quality\qrrepairsum.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>qrrepairsum.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Quality\qrrepairsum.xss">
+      <DependentUpon>qrrepairsum.xsd</DependentUpon>
+    </None>
+    <None Include="Quality\qrsewingday.xsc">
+      <DependentUpon>qrsewingday.xsd</DependentUpon>
+    </None>
+    <None Include="Quality\qrsewingday.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>qrsewingday.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Quality\qrsewingday.xss">
+      <DependentUpon>qrsewingday.xsd</DependentUpon>
+    </None>
+    <None Include="Quality\qrsewingstyle.xsc">
+      <DependentUpon>qrsewingstyle.xsd</DependentUpon>
+    </None>
+    <None Include="Quality\qrsewingstyle.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>qrsewingstyle.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Quality\qrsewingstyle.xss">
+      <DependentUpon>qrsewingstyle.xsd</DependentUpon>
     </None>
     <None Include="Quality\rejectxsd.xsc">
       <DependentUpon>rejectxsd.xsd</DependentUpon>

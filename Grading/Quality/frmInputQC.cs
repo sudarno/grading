@@ -55,5 +55,10 @@ namespace Grading.Quality
         {
 
         }
+
+        private void frmInputQC_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

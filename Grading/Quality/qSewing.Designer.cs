@@ -98,6 +98,7 @@
             this.dateQC.Name = "dateQC";
             this.dateQC.Size = new System.Drawing.Size(214, 20);
             this.dateQC.TabIndex = 18;
+            this.dateQC.ValueChanged += new System.EventHandler(this.dateQC_ValueChanged);
             // 
             // label1
             // 
@@ -110,7 +111,7 @@
             // 
             // cmdView
             // 
-            this.cmdView.Location = new System.Drawing.Point(313, 19);
+            this.cmdView.Location = new System.Drawing.Point(288, 19);
             this.cmdView.Name = "cmdView";
             this.cmdView.Size = new System.Drawing.Size(75, 23);
             this.cmdView.TabIndex = 20;
@@ -134,6 +135,7 @@
             this.groupBox1.TabIndex = 37;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Report";
+            this.groupBox1.Visible = false;
             // 
             // cmdSumPerStyle
             // 
@@ -250,7 +252,7 @@
             this.Controls.Add(this.cmdSave);
             this.Controls.Add(this.masterDataGridView);
             this.Name = "frmQCCheck";
-            this.Text = "frmQCCheck";
+            this.Text = "frmQCCheck Sewing";
             this.Load += new System.EventHandler(this.frmQCCheck_Load);
             ((System.ComponentModel.ISupportInitialize)(this.masterDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
