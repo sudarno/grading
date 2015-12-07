@@ -19,11 +19,12 @@ namespace Grading.Quality
         //item reject detail
         string style = null;
         string color = null;
+        int ID1;
         
         private string STYLEID { get; set; } //1
         private string COLORID { get; set; } //2
         private int ID { get; set; } //3 CODE
-        private int ID1 { get; set; }
+        //private int ID1 { get; set; }
         private int MAJOR { get; set; } //3 CODE
         private int MINOR { get; set; } //4
         private string NAME { get; set; }
@@ -51,7 +52,7 @@ namespace Grading.Quality
         }
 
         //CRUD detail
-        private bool insertDetail(string STYLEID, string COLORID, int ID, int MAJOR, int MINOR,string NAME)
+        private bool insertDetail(string STYLEID, string COLORID, int ID,int ID1, int MAJOR, int MINOR,string NAME)
         {
             bool stat = false;
             try
@@ -66,11 +67,12 @@ namespace Grading.Quality
                 Command.Connection = Connection;
                 Command.CommandType = CommandType.Text;
                 // Command.CommandText = "Select * from Orders ";
-                Command.CommandText = "INSERT INTO qcinspectiondetail(STYLEID,COLORID,ID,MAJOR,MINOR,NAME) VALUES(@STYLEID,@COLORID,@ID,@MAJOR,@MINOR,@NAME)";
+                Command.CommandText = "INSERT INTO qcinspectiondetail(STYLEID,COLORID,ID,ID1,MAJOR,MINOR,NAME) VALUES(@STYLEID,@COLORID,@ID,@ID1,@MAJOR,@MINOR,@NAME)";
                 //item insert
                 Command.Parameters.AddWithValue("@STYLEID", STYLEID);
                 Command.Parameters.AddWithValue("@COLORID", COLORID);
                 Command.Parameters.AddWithValue("@ID", ID);
+                Command.Parameters.AddWithValue("@ID1", ID1);
                 Command.Parameters.AddWithValue("@MAJOR", MAJOR);
                 Command.Parameters.AddWithValue("@MINOR", MINOR);
                 Command.Parameters.AddWithValue("@NAME", NAME);
@@ -101,7 +103,7 @@ namespace Grading.Quality
                 Command.Connection = Connection;
                 Command.CommandType = CommandType.Text;
                 // Command.CommandText = "Select * from Orders ";
-                Command.CommandText = "UPDATE qcinspectiondetail SET ID=@ID,MAJOR=@MAJOR,MINOR=@MINOR,NAME=@NAME WHERE STYLEID=@STYLEID AND COLORID=@COLORID AND ID=@ID1";
+                Command.CommandText = "UPDATE qcinspectiondetail SET ID=@ID,MAJOR=@MAJOR,MINOR=@MINOR,NAME=@NAME WHERE ID1=@ID1 AND ID=@ID";
                 //item insert
                 Command.Parameters.AddWithValue("@STYLEID", STYLEID);
                 Command.Parameters.AddWithValue("@COLORID", COLORID);
@@ -122,7 +124,7 @@ namespace Grading.Quality
             return stat;
         }
 
-        private bool updateDetail(string STYLEID, string COLORID, int ID)
+        private bool deleteDetail(int ID,int ID1)
         {
             bool stat = false;
             try
@@ -136,11 +138,11 @@ namespace Grading.Quality
                 MySqlCommand Command = new MySqlCommand();
                 Command.Connection = Connection;
                 Command.CommandType = CommandType.Text;
-                Command.CommandText = "DELETE FROM qcinspectiondetail WHERE STYLEID=@STYLEID AND COLORID=@COLORID AND ID=@ID";
+                Command.CommandText = "DELETE FROM qcinspectiondetail WHERE ID=@ID AND ID1=@ID1";
                 //item insert
-                Command.Parameters.AddWithValue("@STYLEID", STYLEID);
-                Command.Parameters.AddWithValue("@COLORID", COLORID);
+             
                 Command.Parameters.AddWithValue("@ID", ID);
+                Command.Parameters.AddWithValue("@ID1", ID1);
 
                 Command.ExecuteNonQuery();
                 Connection.Close();//akhiri koneksi
@@ -165,23 +167,23 @@ namespace Grading.Quality
                 COLORID = Convert.ToString(detailsDataGridView.Rows[i].Cells["hCOLORID"].Value);
 
                 ID = Convert.ToInt32(detailsDataGridView.Rows[i].Cells["hID"].Value);
-                ID1 = Convert.ToInt32(detailsDataGridView.Rows[i].Cells["hID1"].Value);
+               // ID1 = Convert.ToInt32(detailsDataGridView.Rows[i].Cells["hID1"].Value);
                 MAJOR = Convert.ToInt32(detailsDataGridView.Rows[i].Cells["hMAJOR"].Value);
                 MINOR = Convert.ToInt32(detailsDataGridView.Rows[i].Cells["hMINOR"].Value);
                 NAME = Convert.ToString(detailsDataGridView.Rows[i].Cells["hNAME"].Value);
                 if (STYLEID=="") //untuk insert
                 {
-                    if (insertDetail(style, color, ID, MAJOR, MINOR, NAME))
+                    if (insertDetail(style, color, ID,ID1, MAJOR, MINOR, NAME))
                     {
                         detailsDataGridView.Rows[i].Cells["hSTYLEID"].Value = style;
                         detailsDataGridView.Rows[i].Cells["hCOLORID"].Value = color;
-                        detailsDataGridView.Rows[i].Cells["hID1"].Value = ID;
+                        detailsDataGridView.Rows[i].Cells["hID1"].Value = ID1;
                     }
                 }else //untuk update
                 {
                     if (updateDetail(style, color, ID1,ID, MAJOR, MINOR, NAME))
                     {
-                        detailsDataGridView.Rows[i].Cells["hID1"].Value = ID;
+                        detailsDataGridView.Rows[i].Cells["hID1"].Value = ID1;
                     }
                 }
             }
@@ -333,6 +335,12 @@ namespace Grading.Quality
                 ColumnQTY.Name = "QTY";
                 masterDataGridView.Columns.Add(ColumnQTY);
 
+                DataGridViewTextBoxColumn ColumnQTYSHIP = new DataGridViewTextBoxColumn();
+                ColumnQTYSHIP.HeaderText = "QTY SHIP";
+                ColumnQTYSHIP.Width = 50;
+                ColumnQTYSHIP.DataPropertyName = "QTYSHIP";
+                ColumnQTYSHIP.Name = "QTYSHIP";
+                masterDataGridView.Columns.Add(ColumnQTYSHIP);
 
                 DataGridViewTextBoxColumn ColumnREMARKS = new DataGridViewTextBoxColumn();
                 ColumnREMARKS.HeaderText = "REMARKS";
@@ -435,6 +443,21 @@ namespace Grading.Quality
 
                 masterDataGridView.Columns.Add(ColumnBuyer);
 
+                DataGridViewTextBoxColumn ColumnID1 = new DataGridViewTextBoxColumn();
+                ColumnID1.HeaderText = "ID1";
+                ColumnID1.Width = 80;
+                ColumnID1.DataPropertyName = "ID1";
+                ColumnID1.Name = "ID1";
+                ColumnID1.Visible = false;
+                masterDataGridView.Columns.Add(ColumnID1);
+
+
+                DataGridViewTextBoxColumn ColumnPOCust = new DataGridViewTextBoxColumn();
+                ColumnPOCust.HeaderText = "PO CUSTOMER";
+                ColumnPOCust.Width = 80;
+                ColumnPOCust.DataPropertyName = "POCUSTOMER";
+                ColumnPOCust.Name = "POCUSTOMER";
+                masterDataGridView.Columns.Add(ColumnPOCust);
 
                 DataGridViewComboBoxColumn ColumnColor = new DataGridViewComboBoxColumn();
                 ColumnColor.HeaderText = "COLOR";
@@ -494,6 +517,14 @@ namespace Grading.Quality
 
                 masterDataGridView.Columns.Add(ColumnQtyStatus);
 
+                DataGridViewTextBoxColumn ColumnQTYCUTT = new DataGridViewTextBoxColumn();
+                ColumnQTYCUTT.HeaderText = "QTY CUTT";
+                ColumnQTYCUTT.Width = 50;
+                ColumnQTYCUTT.DataPropertyName = "QTYCUTT";
+                ColumnQTYCUTT.Name = "QTYCUTT";
+                masterDataGridView.Columns.Add(ColumnQTYCUTT);
+
+
                 DataGridViewTextBoxColumn ColumnQTY = new DataGridViewTextBoxColumn();
                 ColumnQTY.HeaderText = "QTY INSP";
                 ColumnQTY.Width = 50;
@@ -501,6 +532,12 @@ namespace Grading.Quality
                 ColumnQTY.Name = "QTY";
                 masterDataGridView.Columns.Add(ColumnQTY);
 
+                DataGridViewTextBoxColumn ColumnQTYSHIP = new DataGridViewTextBoxColumn();
+                ColumnQTYSHIP.HeaderText = "QTY SHIP";
+                ColumnQTYSHIP.Width = 50;
+                ColumnQTYSHIP.DataPropertyName = "QTYSHIP";
+                ColumnQTYSHIP.Name = "QTYSHIP";
+                masterDataGridView.Columns.Add(ColumnQTYSHIP);
 
                 DataGridViewTextBoxColumn ColumnREMARKS = new DataGridViewTextBoxColumn();
                 ColumnREMARKS.HeaderText = "REMARKS";
@@ -601,6 +638,14 @@ namespace Grading.Quality
                 masterDataGridView.Columns.Add(ColumnBuyer);
 
 
+                DataGridViewTextBoxColumn ColumnID1 = new DataGridViewTextBoxColumn();
+                ColumnID1.HeaderText = "ID1";
+                ColumnID1.Width = 80;
+                ColumnID1.DataPropertyName = "ID1";
+                ColumnID1.Name = "ID1";
+                ColumnID1.ReadOnly = false;
+                masterDataGridView.Columns.Add(ColumnID1);
+
                 DataGridViewComboBoxColumn ColumnColor = new DataGridViewComboBoxColumn();
                 ColumnColor.HeaderText = "COLOR";
                 ColumnColor.Width = 100;
@@ -685,7 +730,7 @@ namespace Grading.Quality
         }
         private void frmInspection_Load(object sender, EventArgs e)
         {
-            getData(dateQC.Value.Date);
+            getData(dateQC.Value.Date,dateQC2.Value.Date);
         }
 
         private void cmdSave_Click(object sender, EventArgs e)
@@ -694,6 +739,7 @@ namespace Grading.Quality
             {
                 masterBindingSource.EndEdit();
                 masterDataAdapter.Update(data, "qcinspection");
+                //getData(dateQC.Value.Date, dateQC2.Value.Date);
                 saveItem();
                 MessageBox.Show("the data has been saved");
             }
@@ -782,12 +828,18 @@ namespace Grading.Quality
     
                 style = masterDataGridView.Rows[e.RowIndex].Cells["STYLEID"].Value.ToString();
                 color = masterDataGridView.Rows[e.RowIndex].Cells["COLORID"].Value.ToString();
+                //if (masterDataGridView.Rows[e.RowIndex].Cells["ID1"].Value == DBNull)
+               // {
+                Int32.TryParse(masterDataGridView.Rows[e.RowIndex].Cells["ID1"].Value.ToString(), out ID1);
+                //}
                 MySqlConnection connection = new MySqlConnection(Global.strCon);
                 DataSet dsDetail = new DataSet();
-                string strQuery = "SELECT * FROM qcinspectiondetail WHERE STYLEID=@STYLEID AND COLORID=@COLORID";
+                //string strQuery = "SELECT * FROM qcinspectiondetail WHERE STYLEID=@STYLEID AND COLORID=@COLORID";
+                string strQuery = "SELECT * FROM qcinspectiondetail WHERE ID1=@ID1";
                 MySqlDataAdapter DetailsAdapter = new MySqlDataAdapter(strQuery, connection);
-                DetailsAdapter.SelectCommand.Parameters.AddWithValue("@STYLEID", style);
-                DetailsAdapter.SelectCommand.Parameters.AddWithValue("@COLORID", color);
+                //DetailsAdapter.SelectCommand.Parameters.AddWithValue("@STYLEID", style);
+                //DetailsAdapter.SelectCommand.Parameters.AddWithValue("@COLORID", color);
+                DetailsAdapter.SelectCommand.Parameters.AddWithValue("@ID1", ID1);
                 DetailsAdapter.Fill(dsDetail, "inspectiondetail");
 
                 detailsDataGridView.Rows.Clear();
@@ -797,7 +849,7 @@ namespace Grading.Quality
                     detailsDataGridView.Rows[i].Cells["hSTYLEID"].Value = dsDetail.Tables[0].Rows[i]["STYLEID"];
                     detailsDataGridView.Rows[i].Cells["hCOLORID"].Value = dsDetail.Tables[0].Rows[i]["COLORID"];
                     detailsDataGridView.Rows[i].Cells["hID"].Value = dsDetail.Tables[0].Rows[i]["ID"];
-                    detailsDataGridView.Rows[i].Cells["hID1"].Value = dsDetail.Tables[0].Rows[i]["ID"];
+                    detailsDataGridView.Rows[i].Cells["hID1"].Value = ID1;//dsDetail.Tables[0].Rows[i]["ID1"];
                     detailsDataGridView.Rows[i].Cells["hMAJOR"].Value = dsDetail.Tables[0].Rows[i]["MAJOR"];
                     detailsDataGridView.Rows[i].Cells["hMINOR"].Value = dsDetail.Tables[0].Rows[i]["MINOR"];
                     detailsDataGridView.Rows[i].Cells["hNAME"].Value = dsDetail.Tables[0].Rows[i]["NAME"];
@@ -822,6 +874,14 @@ namespace Grading.Quality
         private void cmdPrintDetail_Click(object sender, EventArgs e)
         {
             InspectionRpt f = new InspectionRpt();
+            this.SetParameterValueCallback += new SetParameterValueDelegate(f.SetParamValueCallbackFn);
+            SetParameterValueCallback(dateQC.Value.ToString("yyyy-MM-dd"), dateQC2.Value.ToString("yyyy-MM-dd"));
+            f.Show();
+        }
+
+        private void cmdPrintDetail1_Click(object sender, EventArgs e)
+        {
+            InspectionDetail f = new InspectionDetail();
             this.SetParameterValueCallback += new SetParameterValueDelegate(f.SetParamValueCallbackFn);
             SetParameterValueCallback(dateQC.Value.ToString("yyyy-MM-dd"), dateQC2.Value.ToString("yyyy-MM-dd"));
             f.Show();

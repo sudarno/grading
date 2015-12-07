@@ -26,6 +26,7 @@ namespace Grading.Quality
             date1 = param1;
             date2 = param2;
 
+
         }
         private void rejectRptFrm_Load(object sender, EventArgs e)
         {

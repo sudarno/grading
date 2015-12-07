@@ -15,5 +15,10 @@ namespace Grading
         {
             InitializeComponent();
         }
+
+        private void printGrading1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

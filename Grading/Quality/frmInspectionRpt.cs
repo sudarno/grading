@@ -69,6 +69,39 @@ namespace Grading.Quality
 
         }
 
+        private void cmdXsdDetail_Click(object sender, EventArgs e)
+        {
+            DataSet qcreportinspectiondetail = new DataSet();
+            MySqlConnection connection = new MySqlConnection(Global.strCon);
+            /*
+            string strQuery = "SELECT date('" + date1.Value.ToString("yyyy-MM-dd") + "') date1,date('" + date2.Value.ToString("yyyy-MM-dd") + "') date2,buyer.BUYERNAME,style.STYLENAME,qcstyle.POCUSTOMER,qcstyle.QTYORDER,qcstyle.QTYCUTT,qcstyle.QTYSHIP,qcstyle.CATEGORY , color.COLORNAME,qcinspection.DATE,qcinspection.INSPECTOR,qcinspection.RESULT,qcinspection.REMARKS, " +
+                "qcinspection.QTY,qcinspectiondetail.MAJOR,qcinspectiondetail.MINOR,qcinspectiondetail.NAME,qcinspectiondetail.ID " +
+                "FROM qcinspection " +
+                "INNER JOIN qcstyle ON qcstyle.STYLEID=qcinspection.STYLEID AND qcstyle.COLORID=qcinspection.COLORID " +
+                "INNER JOIN buyer ON qcinspection.BUYERID=buyer.BUYERID " +
+                "INNER JOIN style ON style.STYLEID=qcinspection.STYLEID " +
+                "INNER JOIN color ON color.COLORID=qcinspection.COLORID " +
+                "INNER JOIN qcinspectiondetail ON qcinspectiondetail.STYLEID =qcinspection.STYLEID AND qcinspectiondetail.COLORID=qcinspection.COLORID";
+
+            */
+            string strQuery = "SELECT date('" + date1.Value.ToString("yyyy-MM-dd") + "') date1,date('" + date2.Value.ToString("yyyy-MM-dd") + "') date2,qcinspection.ID1,buyer.BUYERNAME,style.STYLENAME,qcinspection.POCUSTOMER,qcstyle.QTYORDER,qcinspection.QTYCUTT,qcinspection.QTYSHIP,qcinspection.CATEGORYID CATEGORY, color.COLORNAME,qcinspection.DATE,qcinspection.INSPECTOR,qcinspection.RESULT,qcinspection.REMARKS, qcinspection.QTY,qcinspectiondetail.MAJOR,qcinspectiondetail.MINOR,qcinspectiondetail.NAME,qcinspectiondetail.ID FROM qcinspection INNER JOIN qcstyle ON qcstyle.STYLEID=qcinspection.STYLEID AND qcstyle.COLORID=qcinspection.COLORID INNER JOIN buyer ON qcinspection.BUYERID=buyer.BUYERID INNER JOIN style ON style.STYLEID=qcinspection.STYLEID INNER JOIN color ON color.COLORID=qcinspection.COLORID INNER JOIN qcinspectiondetail ON qcinspectiondetail.ID1 =qcinspection.ID1  " +
+               "WHERE DATE BETWEEN '2000-10-07' AND '2016-10-07'";
+
+            masterDataAdapter = new MySqlDataAdapter(strQuery, connection);
+
+            masterDataAdapter.Fill(qcreportinspectiondetail, "qcinspectiondetail");
+            Application.DoEvents();
+            qcreportinspectiondetail.WriteXmlSchema("C:\\MyGarmentReport\\qcinspectiondetail.xsd");
+        }
+
+        private void cmdPrindetail1_Click(object sender, EventArgs e)
+        {
+            InspectionDetail f = new InspectionDetail();
+            this.SetParameterValueCallback += new SetParameterValueDelegate(f.SetParamValueCallbackFn);
+            SetParameterValueCallback(date1.Value.ToString("yyyy-MM-dd"), date2.Value.ToString("yyyy-MM-dd"));
+            f.Show();
+        }
+
    
     }
 }

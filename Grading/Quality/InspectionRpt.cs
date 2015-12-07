@@ -33,7 +33,7 @@ namespace Grading.Quality
 
                 DataSet qcreportinspectiondetail = new DataSet();
                 MySqlConnection connection = new MySqlConnection(Global.strCon);
-                string strQuery = "SELECT date(@DATE1) date1,date(@DATE2) date2,buyer.BUYERNAME,style.STYLENAME,qcstyle.POCUSTOMER,qcstyle.QTYORDER,qcstyle.QTYCUTT,qcstyle.QTYSHIP,qcstyle.CATEGORY , color.COLORNAME,qcinspection.DATE,qcinspection.INSPECTOR,qcinspection.RESULT,qcinspection.REMARKS, " +
+                string strQuery = "SELECT date(@DATE1) date1,date(@DATE2) date2,buyer.BUYERNAME,style.STYLENAME,qcinspection.POCUSTOMER,qcstyle.QTYORDER,qcinspection.QTYCUTT,qcinspection.QTYSHIP,qcinspection.CATEGORYID CATEGORY, color.COLORNAME,qcinspection.DATE,qcinspection.INSPECTOR,qcinspection.RESULT,qcinspection.REMARKS, " +
                "qcinspection.QTY,qcinspectiondetail.MAJOR,qcinspectiondetail.MINOR,qcinspectiondetail.NAME,qcinspectiondetail.ID " +
                "FROM qcinspection " +
                "INNER JOIN qcstyle ON qcstyle.STYLEID=qcinspection.STYLEID AND qcstyle.COLORID=qcinspection.COLORID " +

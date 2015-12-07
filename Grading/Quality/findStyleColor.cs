@@ -84,7 +84,7 @@ namespace Grading.Quality
 
         private void cmdFind_Click(object sender, EventArgs e)
         {
-            getData(txtStyleID.Text, txtBuyerName.Text);
+            getData(txtStyleID.Text.ToString(), txtBuyerName.Text.ToString());
         }
 
         private void cmdClose_Click(object sender, EventArgs e)

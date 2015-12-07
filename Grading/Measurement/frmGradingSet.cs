@@ -386,6 +386,8 @@ namespace Grading
                  " ,MAX(case when sizeorder.ORDERNO=8 then gradingdetail.BASIC end ) BASIC8" +
                  " ,MAX(case when sizeorder.ORDERNO=9 then gradingdetail.BASIC end ) BASIC9" +
                  " ,MAX(case when sizeorder.ORDERNO=10 then gradingdetail.BASIC end ) BASIC10" +
+                 " ,MAX(case when sizeorder.ORDERNO=10 then gradingdetail.BASIC end ) BASIC11" +
+                 " ,MAX(case when sizeorder.ORDERNO=10 then gradingdetail.BASIC end ) BASIC12" +
                   " from grading " +
                   " inner join gradingdetail on grading.STYLEID=gradingdetail.STYLEID" +
                   " inner join measurement on measurement.MEID=gradingdetail.MEID" +
@@ -529,9 +531,9 @@ namespace Grading
             return stat;
         }
 
+       // STYLEID1, MEID1, SIZEID1, MEID, SIZEID, DIRECTION, BASIC
 
-
-        private bool updateGaradingDetail(string STYLEID, string COLORID, string CODE1, string CODE,string SIZEID,string DIRECTION,double QTY)
+        private bool updateGaradingDetail(string STYLEID1, string MEID1, string SIZEID1, string MEID,string SIZEID, string DIRECTION, double BASIC)
         {
             bool stat = false;
             try
@@ -547,15 +549,17 @@ namespace Grading
                 MySqlCommand Command = new MySqlCommand();
                 Command.Connection = Connection;
                 Command.CommandType = CommandType.Text;
-                Command.CommandText = "UPDATE rejectdetail SET CODE=@CODE,SIZEID=@SIZEID,QTY=@QTY  WHERE STYLEID=@STYLEID AND COLORID=@COLORID AND CODE=@CODE1 AND SIZEID=@SIZEID ";
-                //key
-                Command.Parameters.AddWithValue("@STYLEID", STYLEID);
-                Command.Parameters.AddWithValue("@COLORID", COLORID);
-                Command.Parameters.AddWithValue("@CODE1", CODE1);
+                Command.CommandText = "UPDATE gradingdetail SET MEID=@MEID,SIZEID=@SIZEID,DIRECTION=@DIRECTION,BASIC=@BASIC WHERE STYLEID=@STYLEID1 AND MEID=@MEID1 AND SIZEID=@SIZEID1 ";
+                //item update key
+                Command.Parameters.AddWithValue("@STYLEID1", STYLEID1);
+                Command.Parameters.AddWithValue("@MEID1", MEID1);
+                Command.Parameters.AddWithValue("@SIZEID1", SIZEID1);
+
+                //update detail
+                Command.Parameters.AddWithValue("@MEID", MEID);
                 Command.Parameters.AddWithValue("@SIZEID", SIZEID);
-                //item update
-                Command.Parameters.AddWithValue("@CODE", CODE);
-                Command.Parameters.AddWithValue("@QTY", QTY);
+                Command.Parameters.AddWithValue("@DIRECTION", DIRECTION);
+                Command.Parameters.AddWithValue("@BASIC", BASIC);
 
                 Command.ExecuteNonQuery();
                 Connection.Close();//akhiri koneksi

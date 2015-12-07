@@ -35,6 +35,8 @@
             this.date2 = new System.Windows.Forms.DateTimePicker();
             this.date1 = new System.Windows.Forms.DateTimePicker();
             this.cmdPrintDetail = new System.Windows.Forms.Button();
+            this.cmdXsdDetail = new System.Windows.Forms.Button();
+            this.cmdPrindetail1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmdXsd
@@ -91,19 +93,42 @@
             // 
             // cmdPrintDetail
             // 
-            this.cmdPrintDetail.Location = new System.Drawing.Point(166, 95);
+            this.cmdPrintDetail.Location = new System.Drawing.Point(62, 124);
             this.cmdPrintDetail.Name = "cmdPrintDetail";
             this.cmdPrintDetail.Size = new System.Drawing.Size(75, 23);
             this.cmdPrintDetail.TabIndex = 23;
             this.cmdPrintDetail.Text = "Print Detail";
             this.cmdPrintDetail.UseVisualStyleBackColor = true;
+            this.cmdPrintDetail.Visible = false;
             this.cmdPrintDetail.Click += new System.EventHandler(this.cmdPrintDetail_Click);
+            // 
+            // cmdXsdDetail
+            // 
+            this.cmdXsdDetail.Location = new System.Drawing.Point(177, 164);
+            this.cmdXsdDetail.Name = "cmdXsdDetail";
+            this.cmdXsdDetail.Size = new System.Drawing.Size(75, 23);
+            this.cmdXsdDetail.TabIndex = 24;
+            this.cmdXsdDetail.Text = "xsd detail";
+            this.cmdXsdDetail.UseVisualStyleBackColor = true;
+            this.cmdXsdDetail.Click += new System.EventHandler(this.cmdXsdDetail_Click);
+            // 
+            // cmdPrindetail1
+            // 
+            this.cmdPrindetail1.Location = new System.Drawing.Point(166, 95);
+            this.cmdPrindetail1.Name = "cmdPrindetail1";
+            this.cmdPrindetail1.Size = new System.Drawing.Size(75, 23);
+            this.cmdPrindetail1.TabIndex = 25;
+            this.cmdPrindetail1.Text = "Print Detail";
+            this.cmdPrindetail1.UseVisualStyleBackColor = true;
+            this.cmdPrindetail1.Click += new System.EventHandler(this.cmdPrindetail1_Click);
             // 
             // frmInspectionRpt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(325, 138);
+            this.ClientSize = new System.Drawing.Size(325, 147);
+            this.Controls.Add(this.cmdPrindetail1);
+            this.Controls.Add(this.cmdXsdDetail);
             this.Controls.Add(this.cmdPrintDetail);
             this.Controls.Add(this.cmdXsd);
             this.Controls.Add(this.cmdPrint);
@@ -127,5 +152,7 @@
         private System.Windows.Forms.DateTimePicker date2;
         private System.Windows.Forms.DateTimePicker date1;
         private System.Windows.Forms.Button cmdPrintDetail;
+        private System.Windows.Forms.Button cmdXsdDetail;
+        private System.Windows.Forms.Button cmdPrindetail1;
     }
 }

@@ -79,7 +79,7 @@
             this.detailsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.detailsDataGridView.Location = new System.Drawing.Point(18, 49);
             this.detailsDataGridView.Name = "detailsDataGridView";
-            this.detailsDataGridView.Size = new System.Drawing.Size(783, 141);
+            this.detailsDataGridView.Size = new System.Drawing.Size(605, 141);
             this.detailsDataGridView.TabIndex = 124;
             this.detailsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.detailsDataGridView_CellContentClick);
             this.detailsDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.detailsDataGridView_CellDoubleClick);
@@ -121,9 +121,9 @@
             // 
             // picItems
             // 
-            this.picItems.Location = new System.Drawing.Point(807, 49);
+            this.picItems.Location = new System.Drawing.Point(629, 49);
             this.picItems.Name = "picItems";
-            this.picItems.Size = new System.Drawing.Size(156, 141);
+            this.picItems.Size = new System.Drawing.Size(164, 141);
             this.picItems.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picItems.TabIndex = 130;
             this.picItems.TabStop = false;
@@ -134,7 +134,7 @@
             // 
             // txtPath
             // 
-            this.txtPath.Location = new System.Drawing.Point(442, 209);
+            this.txtPath.Location = new System.Drawing.Point(268, 209);
             this.txtPath.Name = "txtPath";
             this.txtPath.Size = new System.Drawing.Size(377, 20);
             this.txtPath.TabIndex = 131;
@@ -144,7 +144,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(966, 245);
+            this.ClientSize = new System.Drawing.Size(799, 245);
             this.Controls.Add(this.txtPath);
             this.Controls.Add(this.picItems);
             this.Controls.Add(this.txtDesc);

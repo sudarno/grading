@@ -127,7 +127,7 @@ namespace Grading.Quality
                     QTYCUTTColumn.DataPropertyName = "QTYCUTT";
                     QTYCUTTColumn.Name = "QTYCUTT";
                     detailsDataGridView.Columns.Add(QTYCUTTColumn);
-                    */
+                    
                     DataGridViewTextBoxColumn QTYSHIPColumn = new DataGridViewTextBoxColumn();
                     QTYSHIPColumn.HeaderText = "QTY SHIP";
                     QTYSHIPColumn.Width = 100;
@@ -141,6 +141,14 @@ namespace Grading.Quality
                     QTYPOColumn.DataPropertyName = "POCUSTOMER";
                     QTYPOColumn.Name = "POCUSTOMER";
                     detailsDataGridView.Columns.Add(QTYPOColumn);
+                    */
+
+                    DataGridViewTextBoxColumn CATEColumn = new DataGridViewTextBoxColumn();
+                    CATEColumn.HeaderText = "CATEGORY";
+                    CATEColumn.Width = 100;
+                    CATEColumn.DataPropertyName = "CATEGORY";
+                    CATEColumn.Name = "CATEGORY";
+                    detailsDataGridView.Columns.Add(CATEColumn);
 
                     DataGridViewImageColumn IMAGEColumn = new DataGridViewImageColumn();
                     IMAGEColumn.HeaderText = "IMAGE";
@@ -148,8 +156,6 @@ namespace Grading.Quality
                     IMAGEColumn.DataPropertyName = "IMAGE";
                     IMAGEColumn.Name = "IMAGE";
                     detailsDataGridView.Columns.Add(IMAGEColumn);
-
-
                
                     connection.Close();
 

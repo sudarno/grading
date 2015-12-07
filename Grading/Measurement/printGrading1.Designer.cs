@@ -55,6 +55,7 @@
             this.Name = "printGrading1";
             this.Text = "printGrading1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.printGrading1_Load);
             this.ResumeLayout(false);
 
         }

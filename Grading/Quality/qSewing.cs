@@ -158,6 +158,14 @@ namespace Grading
                 ColumnDate.Visible = false;
                 masterDataGridView.Columns.Add(ColumnDate);
 
+                DataGridViewTextBoxColumn ColumnQtyPass = new DataGridViewTextBoxColumn();
+                ColumnQtyPass.HeaderText = "QTY PASS";
+                ColumnQtyPass.Width = 60;
+                ColumnQtyPass.DataPropertyName = "QTYPASS";
+                ColumnQtyPass.Name = "QTYPASS";
+                masterDataGridView.Columns.Add(ColumnQtyPass);
+
+
                 DataGridViewTextBoxColumn ColumnQtyCheck = new DataGridViewTextBoxColumn();
                 ColumnQtyCheck.HeaderText = "QTY REPAIR";
                 ColumnQtyCheck.Width = 60;
@@ -165,12 +173,6 @@ namespace Grading
                 ColumnQtyCheck.Name = "QTYCHECK";
                 masterDataGridView.Columns.Add(ColumnQtyCheck);
 
-                DataGridViewTextBoxColumn ColumnQtyPass = new DataGridViewTextBoxColumn();
-                ColumnQtyPass.HeaderText = "QTY PASS";
-                ColumnQtyPass.Width = 60;
-                ColumnQtyPass.DataPropertyName = "QTYPASS";
-                ColumnQtyPass.Name = "QTYPASS";
-                masterDataGridView.Columns.Add(ColumnQtyPass);
 
 
 

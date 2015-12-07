@@ -9,6 +9,8 @@ using System.Windows.Forms;
 using Grading.Quality;
 using Grading.Master;
 using Grading.Measurement;
+using Grading.SRF;
+using Grading.Sample;
 
 namespace Grading
 {
@@ -253,6 +255,90 @@ namespace Grading
         private void rejectListToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmRejectList f = new frmRejectList();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void statusSampleToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmSample f = new frmSample();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void statusSampleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Costing f = new Costing();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void patternToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Pattern f = new Pattern();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void bookingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Booking f = new Booking();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void productionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Production f = new Production();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void settingToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Setting f = new Setting();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void cekCrystalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cekCrystal f = new cekCrystal();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void costingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            sfCosting f = new sfCosting();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void bookingToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            sfBooking f = new sfBooking();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void patternToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            sfPattern f = new sfPattern();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void productionToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            sfProduction f = new sfProduction();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void costingTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            sfCostingBox f = new sfCostingBox();
             f.MdiParent = this;
             f.Show();
         }

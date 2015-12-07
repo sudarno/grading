@@ -41,6 +41,7 @@
             this.lineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.categoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rejectListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingPropertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sizeOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,8 +66,24 @@
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportFinalInspectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportRejectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sRFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.statusSampleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.patternToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sampleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.costingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bookingToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.patternToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.productionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.statusSampleToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.cekCrystalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.test1 = new Grading.test();
-            this.rejectListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.costingTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,7 +93,9 @@
             this.fileToolStripMenuItem,
             this.masterToolStripMenuItem,
             this.qCToolStripMenuItem,
-            this.qualityToolStripMenuItem});
+            this.qualityToolStripMenuItem,
+            this.sRFToolStripMenuItem,
+            this.sampleToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(844, 24);
@@ -175,6 +194,13 @@
             this.categoryToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.categoryToolStripMenuItem.Text = "Category";
             this.categoryToolStripMenuItem.Click += new System.EventHandler(this.categoryToolStripMenuItem_Click);
+            // 
+            // rejectListToolStripMenuItem
+            // 
+            this.rejectListToolStripMenuItem.Name = "rejectListToolStripMenuItem";
+            this.rejectListToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.rejectListToolStripMenuItem.Text = "Reject List";
+            this.rejectListToolStripMenuItem.Click += new System.EventHandler(this.rejectListToolStripMenuItem_Click);
             // 
             // qCToolStripMenuItem
             // 
@@ -362,12 +388,134 @@
             this.reportRejectionToolStripMenuItem.Text = "Report Rejection";
             this.reportRejectionToolStripMenuItem.Click += new System.EventHandler(this.reportRejectionToolStripMenuItem_Click);
             // 
-            // rejectListToolStripMenuItem
+            // sRFToolStripMenuItem
             // 
-            this.rejectListToolStripMenuItem.Name = "rejectListToolStripMenuItem";
-            this.rejectListToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.rejectListToolStripMenuItem.Text = "Reject List";
-            this.rejectListToolStripMenuItem.Click += new System.EventHandler(this.rejectListToolStripMenuItem_Click);
+            this.sRFToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingToolStripMenuItem1,
+            this.toolStripSeparator6,
+            this.statusSampleToolStripMenuItem,
+            this.patternToolStripMenuItem,
+            this.bookingToolStripMenuItem,
+            this.productionToolStripMenuItem});
+            this.sRFToolStripMenuItem.Name = "sRFToolStripMenuItem";
+            this.sRFToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.sRFToolStripMenuItem.Text = "SRF";
+            // 
+            // settingToolStripMenuItem1
+            // 
+            this.settingToolStripMenuItem1.Name = "settingToolStripMenuItem1";
+            this.settingToolStripMenuItem1.Size = new System.Drawing.Size(133, 22);
+            this.settingToolStripMenuItem1.Text = "Setting";
+            this.settingToolStripMenuItem1.Click += new System.EventHandler(this.settingToolStripMenuItem1_Click);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(130, 6);
+            // 
+            // statusSampleToolStripMenuItem
+            // 
+            this.statusSampleToolStripMenuItem.Name = "statusSampleToolStripMenuItem";
+            this.statusSampleToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.statusSampleToolStripMenuItem.Text = "Costing";
+            this.statusSampleToolStripMenuItem.Click += new System.EventHandler(this.statusSampleToolStripMenuItem_Click);
+            // 
+            // patternToolStripMenuItem
+            // 
+            this.patternToolStripMenuItem.Name = "patternToolStripMenuItem";
+            this.patternToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.patternToolStripMenuItem.Text = "Pattern";
+            this.patternToolStripMenuItem.Click += new System.EventHandler(this.patternToolStripMenuItem_Click);
+            // 
+            // bookingToolStripMenuItem
+            // 
+            this.bookingToolStripMenuItem.Name = "bookingToolStripMenuItem";
+            this.bookingToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.bookingToolStripMenuItem.Text = "Booking";
+            this.bookingToolStripMenuItem.Click += new System.EventHandler(this.bookingToolStripMenuItem_Click);
+            // 
+            // productionToolStripMenuItem
+            // 
+            this.productionToolStripMenuItem.Name = "productionToolStripMenuItem";
+            this.productionToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.productionToolStripMenuItem.Text = "Production";
+            this.productionToolStripMenuItem.Click += new System.EventHandler(this.productionToolStripMenuItem_Click);
+            // 
+            // sampleToolStripMenuItem
+            // 
+            this.sampleToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.costingToolStripMenuItem,
+            this.costingTestToolStripMenuItem,
+            this.bookingToolStripMenuItem1,
+            this.patternToolStripMenuItem1,
+            this.productionToolStripMenuItem1,
+            this.toolStripSeparator8,
+            this.statusSampleToolStripMenuItem1,
+            this.toolStripSeparator7,
+            this.cekCrystalToolStripMenuItem});
+            this.sampleToolStripMenuItem.Name = "sampleToolStripMenuItem";
+            this.sampleToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.sampleToolStripMenuItem.Text = "Sample";
+            // 
+            // costingToolStripMenuItem
+            // 
+            this.costingToolStripMenuItem.Name = "costingToolStripMenuItem";
+            this.costingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.costingToolStripMenuItem.Text = "Costing";
+            this.costingToolStripMenuItem.Click += new System.EventHandler(this.costingToolStripMenuItem_Click);
+            // 
+            // bookingToolStripMenuItem1
+            // 
+            this.bookingToolStripMenuItem1.Name = "bookingToolStripMenuItem1";
+            this.bookingToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.bookingToolStripMenuItem1.Text = "Booking";
+            this.bookingToolStripMenuItem1.Click += new System.EventHandler(this.bookingToolStripMenuItem1_Click);
+            // 
+            // patternToolStripMenuItem1
+            // 
+            this.patternToolStripMenuItem1.Name = "patternToolStripMenuItem1";
+            this.patternToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.patternToolStripMenuItem1.Text = "Pattern";
+            this.patternToolStripMenuItem1.Click += new System.EventHandler(this.patternToolStripMenuItem1_Click);
+            // 
+            // productionToolStripMenuItem1
+            // 
+            this.productionToolStripMenuItem1.Name = "productionToolStripMenuItem1";
+            this.productionToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.productionToolStripMenuItem1.Text = "Production";
+            this.productionToolStripMenuItem1.Click += new System.EventHandler(this.productionToolStripMenuItem1_Click);
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(149, 6);
+            // 
+            // statusSampleToolStripMenuItem1
+            // 
+            this.statusSampleToolStripMenuItem1.Name = "statusSampleToolStripMenuItem1";
+            this.statusSampleToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.statusSampleToolStripMenuItem1.Text = "Status Sample";
+            this.statusSampleToolStripMenuItem1.Click += new System.EventHandler(this.statusSampleToolStripMenuItem1_Click);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(149, 6);
+            // 
+            // cekCrystalToolStripMenuItem
+            // 
+            this.cekCrystalToolStripMenuItem.Name = "cekCrystalToolStripMenuItem";
+            this.cekCrystalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cekCrystalToolStripMenuItem.Text = "cek Crystal";
+            this.cekCrystalToolStripMenuItem.Visible = false;
+            this.cekCrystalToolStripMenuItem.Click += new System.EventHandler(this.cekCrystalToolStripMenuItem_Click);
+            // 
+            // costingTestToolStripMenuItem
+            // 
+            this.costingTestToolStripMenuItem.Name = "costingTestToolStripMenuItem";
+            this.costingTestToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.costingTestToolStripMenuItem.Text = "CostingTest";
+            this.costingTestToolStripMenuItem.Click += new System.EventHandler(this.costingTestToolStripMenuItem_Click);
             // 
             // Menu
             // 
@@ -429,6 +577,23 @@
         private System.Windows.Forms.ToolStripMenuItem reportQCFinishingToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem rejectListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sRFToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem statusSampleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem patternToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bookingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripMenuItem sampleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem statusSampleToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.ToolStripMenuItem settingToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem cekCrystalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem costingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bookingToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem patternToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem productionToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.Windows.Forms.ToolStripMenuItem costingTestToolStripMenuItem;
     }
 }
 

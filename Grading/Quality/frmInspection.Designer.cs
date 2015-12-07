@@ -43,6 +43,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cmdPrintDetail = new System.Windows.Forms.Button();
             this.cmdPrint = new System.Windows.Forms.Button();
+            this.cmdPrintDetail1 = new System.Windows.Forms.Button();
             this.hSTYLEID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hCOLORID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hID1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -181,12 +182,13 @@
             // 
             // cmdPrintDetail
             // 
-            this.cmdPrintDetail.Location = new System.Drawing.Point(505, 412);
+            this.cmdPrintDetail.Location = new System.Drawing.Point(684, 412);
             this.cmdPrintDetail.Name = "cmdPrintDetail";
             this.cmdPrintDetail.Size = new System.Drawing.Size(75, 23);
             this.cmdPrintDetail.TabIndex = 42;
             this.cmdPrintDetail.Text = "Print Detail";
             this.cmdPrintDetail.UseVisualStyleBackColor = true;
+            this.cmdPrintDetail.Visible = false;
             this.cmdPrintDetail.Click += new System.EventHandler(this.cmdPrintDetail_Click);
             // 
             // cmdPrint
@@ -198,6 +200,16 @@
             this.cmdPrint.Text = "Print";
             this.cmdPrint.UseVisualStyleBackColor = true;
             this.cmdPrint.Click += new System.EventHandler(this.cmdPrint_Click);
+            // 
+            // cmdPrintDetail1
+            // 
+            this.cmdPrintDetail1.Location = new System.Drawing.Point(514, 412);
+            this.cmdPrintDetail1.Name = "cmdPrintDetail1";
+            this.cmdPrintDetail1.Size = new System.Drawing.Size(75, 23);
+            this.cmdPrintDetail1.TabIndex = 43;
+            this.cmdPrintDetail1.Text = "Print Detail";
+            this.cmdPrintDetail1.UseVisualStyleBackColor = true;
+            this.cmdPrintDetail1.Click += new System.EventHandler(this.cmdPrintDetail1_Click);
             // 
             // hSTYLEID
             // 
@@ -246,6 +258,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(938, 465);
+            this.Controls.Add(this.cmdPrintDetail1);
             this.Controls.Add(this.cmdPrintDetail);
             this.Controls.Add(this.cmdPrint);
             this.Controls.Add(this.label3);
@@ -288,6 +301,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button cmdPrintDetail;
         private System.Windows.Forms.Button cmdPrint;
+        private System.Windows.Forms.Button cmdPrintDetail1;
         private System.Windows.Forms.DataGridViewTextBoxColumn hSTYLEID;
         private System.Windows.Forms.DataGridViewTextBoxColumn hCOLORID;
         private System.Windows.Forms.DataGridViewTextBoxColumn hID1;

@@ -126,6 +126,18 @@
     <Compile Include="Measurement\frmInch.Designer.cs">
       <DependentUpon>frmInch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Quality\InspectionDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\InspectionDetail.Designer.cs">
+      <DependentUpon>InspectionDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quality\InspectionDetailCr.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InspectionDetailCr.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Quality\qrFinishingSubCr.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -643,7 +655,223 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>rejectxsd.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Sample\findDocNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sample\findDocNo.Designer.cs">
+      <DependentUpon>findDocNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sample\rptBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sample\rptBooking.Designer.cs">
+      <DependentUpon>rptBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sample\rptBookingCr.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptBookingCr.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sample\rptCosting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sample\rptCosting.Designer.cs">
+      <DependentUpon>rptCosting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sample\rptCostingCr.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCostingCr.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sample\rptPattern.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sample\rptPattern.Designer.cs">
+      <DependentUpon>rptPattern.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sample\rptPatternCr.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPatternCr.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sample\rptProduction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sample\rptProduction.Designer.cs">
+      <DependentUpon>rptProduction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sample\rptProductionCr.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptProductionCr.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sample\sfBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sample\sfBooking.Designer.cs">
+      <DependentUpon>sfBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sample\sfCosting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sample\sfCosting.Designer.cs">
+      <DependentUpon>sfCosting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sample\sfCostingBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sample\sfCostingBox.Designer.cs">
+      <DependentUpon>sfCostingBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sample\sfCostingPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sample\sfCostingPrint.Designer.cs">
+      <DependentUpon>sfCostingPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sample\sfCostingPrintCr.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sfCostingPrintCr.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sample\sfCostingPrintCrSub.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sfCostingPrintCrSub.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sample\sfPattern.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sample\sfPattern.Designer.cs">
+      <DependentUpon>sfPattern.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sample\sfProduction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sample\sfProduction.Designer.cs">
+      <DependentUpon>sfProduction.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="SRF\Booking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SRF\Booking.Designer.cs">
+      <DependentUpon>Booking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SRF\BookingCr.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookingCr.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SRF\BookingFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SRF\BookingFrm.Designer.cs">
+      <DependentUpon>BookingFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SRF\cekCrystal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SRF\cekCrystal.Designer.cs">
+      <DependentUpon>cekCrystal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SRF\Costing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SRF\Costing.Designer.cs">
+      <DependentUpon>Costing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SRF\CostingCr.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CostingCr.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SRF\CostingFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SRF\CostingFrm.Designer.cs">
+      <DependentUpon>CostingFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SRF\findSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SRF\findSetting.Designer.cs">
+      <DependentUpon>findSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SRF\findStyle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SRF\findStyle.Designer.cs">
+      <DependentUpon>findStyle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SRF\Pattern.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SRF\Pattern.Designer.cs">
+      <DependentUpon>Pattern.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SRF\PatternCr.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatternCr.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SRF\PatternFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SRF\PatternFrm.Designer.cs">
+      <DependentUpon>PatternFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SRF\Production.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SRF\Production.Designer.cs">
+      <DependentUpon>Production.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SRF\ProductionCr.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductionCr.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SRF\ProductionFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SRF\ProductionFrm.Designer.cs">
+      <DependentUpon>ProductionFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SRF\Sample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SRF\Sample.Designer.cs">
+      <DependentUpon>Sample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SRF\SampleCr.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleCr.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SRF\SampleFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SRF\SampleFrm.Designer.cs">
+      <DependentUpon>SampleFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SRF\Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SRF\Setting.Designer.cs">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </Compile>
     <Compile Include="test.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -783,6 +1011,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Quality\InspectionDetail.resx">
+      <DependentUpon>InspectionDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\InspectionDetailCr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InspectionDetailCr.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Quality\qrFinishingSubCr.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>qrFinishingSubCr.cs</LastGenOutput>
@@ -934,11 +1169,132 @@
     <EmbeddedResource Include="Quality\rejectRptFrm.resx">
       <DependentUpon>rejectRptFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Sample\findDocNo.resx">
+      <DependentUpon>findDocNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sample\rptBooking.resx">
+      <DependentUpon>rptBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sample\rptBookingCr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBookingCr.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sample\rptCosting.resx">
+      <DependentUpon>rptCosting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sample\rptCostingCr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCostingCr.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sample\rptPattern.resx">
+      <DependentUpon>rptPattern.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sample\rptPatternCr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPatternCr.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sample\rptProduction.resx">
+      <DependentUpon>rptProduction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sample\rptProductionCr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptProductionCr.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sample\sfBooking.resx">
+      <DependentUpon>sfBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sample\sfCosting.resx">
+      <DependentUpon>sfCosting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sample\sfCostingBox.resx">
+      <DependentUpon>sfCostingBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sample\sfCostingPrint.resx">
+      <DependentUpon>sfCostingPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sample\sfCostingPrintCr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>sfCostingPrintCr.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sample\sfCostingPrintCrSub.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>sfCostingPrintCrSub.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sample\sfPattern.resx">
+      <DependentUpon>sfPattern.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sample\sfProduction.resx">
+      <DependentUpon>sfProduction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SRF\Booking.resx">
+      <DependentUpon>Booking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SRF\BookingCr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BookingCr.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SRF\BookingFrm.resx">
+      <DependentUpon>BookingFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SRF\cekCrystal.resx">
+      <DependentUpon>cekCrystal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SRF\Costing.resx">
+      <DependentUpon>Costing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SRF\CostingCr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CostingCr.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SRF\CostingFrm.resx">
+      <DependentUpon>CostingFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SRF\findSetting.resx">
+      <DependentUpon>findSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SRF\findStyle.resx">
+      <DependentUpon>findStyle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SRF\Pattern.resx">
+      <DependentUpon>Pattern.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SRF\PatternCr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PatternCr.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SRF\PatternFrm.resx">
+      <DependentUpon>PatternFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SRF\Production.resx">
+      <DependentUpon>Production.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SRF\ProductionCr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProductionCr.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SRF\ProductionFrm.resx">
+      <DependentUpon>ProductionFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SRF\Sample.resx">
+      <DependentUpon>Sample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SRF\SampleCr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SampleCr.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SRF\SampleFrm.resx">
+      <DependentUpon>SampleFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SRF\Setting.resx">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="test.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>test.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
